@@ -11,6 +11,7 @@ Welcome to the official Duktape Wiki!
 
 ## How-To
 
+* [[How to use virtual properties|HowtoVirtualProperties]]
 * [[How to use finalization|HowtoFinalization]]
 * [[How to use modules|HowtoModules]]
 * [[How to use coroutines|HowtoCoroutines]]
