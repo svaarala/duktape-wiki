@@ -12,6 +12,7 @@ Welcome to the official Duktape Wiki!
 ## How-To
 
 * [[How to use finalization|HowtoFinalization]]
+* [[How to use modules|HowtoModules]]
 * [[How to use coroutines|HowtoCoroutines]]
 * [[How to write a native construction function|HowtoNativeConstructor]]
 
