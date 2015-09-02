@@ -11,6 +11,7 @@ Welcome to the official Duktape Wiki!
 
 ## How-To
 
+* [[How to use coroutines|HowtoCoroutines]]
 * [[How to write a native construction function|HowtoNativeConstructor]]
 
 ## Config and feature options
