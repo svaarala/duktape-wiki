@@ -465,6 +465,46 @@ function fast(x) {
 Use such optimizations only where it matters, because they often reduce
 code readability.
 
+## Using "undefined"
+
+The `undefined` value is interesting in Ecmascript because it's not actually
+a literal but a global variable.  As such, if you refer to it just as
+`undefined`, Duktape will currently read it using a slow path variable read.
+For example:
+
+```js
+    print("undefined is: " + undefined);
+```
+
+produces bytecode like:
+
+```
+    ; constant 19: "undefined"
+
+    ...
+    GETVAR r123, c19   ; load undefined
+    ...
+```
+
+This is slower and uses larger bytecode than necessary.  Using e.g. `void null`
+(or equivalently `void 0`, etc) produces better bytecode.  For example:
+
+```js
+    print("undefined is: " + void null);
+```
+
+produces bytecode like:
+
+```
+    ...
+    LDUNDEF r123
+    ...
+```
+
+This is faster because there's no slow path access.  The code is also better
+because it is no longer dependent on the global `undefined` binding being
+intact.
+
 ## JSON.stringify() fast path
 
 There's a fast path for `JSON.stringify()` serialization which is used when
