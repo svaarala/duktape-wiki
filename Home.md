@@ -2,8 +2,6 @@
 
 Welcome to the official Duktape Wiki!
 
-**THIS WIKI IS UNDER CONSTRUCTION**
-
 ## Documentation
 
 * http://duktape.org/guide.html
@@ -31,8 +29,6 @@ Welcome to the official Duktape Wiki!
 * compilers
 * standard libraries: musl, uclibc
 
-## Contributing
-
-Submit pull requests to:
+## Contributing, copyright, and license
 
 * https://github.com/svaarala/duktape-wiki
