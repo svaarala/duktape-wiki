@@ -33,3 +33,21 @@ Random notes on installation:
   ```
 
 * Web server should redirect `/index.html` to `Home.html`.
+
+License
+-------
+
+Duktape Wiki is part of Duktape documentation and under the
+[Duktape MIT license](https://github.com/svaarala/duktape/blob/master/LICENSE.txt).
+When contributing to the Duktape Wiki you agree to license your contribution
+under this license.
+
+Before contributing to the Wiki, create a pull request into the Duktape main
+repository to include your name in the
+[AUTHORS.rst](https://github.com/svaarala/duktape/blob/master/AUTHORS.rst),
+under "Authors".
+
+Contributing
+------------
+
+See [CONTRIBUTING.md](https://github.com/svaarala/duktape-wiki/blob/master/CONTRIBUTING.md).
