@@ -11,6 +11,7 @@ Welcome to the official Duktape Wiki!
 
 * [[How to use virtual properties|HowtoVirtualProperties]]
 * [[How to use finalization|HowtoFinalization]]
+* [[How to work with buffers|HowtoBuffers]]
 * [[How to use modules|HowtoModules]]
 * [[How to use coroutines|HowtoCoroutines]]
 * [[How to optimize performance|HowtoPerformance]]
