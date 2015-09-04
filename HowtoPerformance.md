@@ -517,6 +517,8 @@ algorithm if necessary.  This happens at least when:
 
 * any object property is a getter
 
+* any object is a Proxy
+
 See [test-bi-json-enc-fastpath.js](https://github.com/svaarala/duktape/blob/master/tests/ecmascript/test-bi-json-enc-fastpath.js)
 for detailed notes on current limitations; the fast path preconditions and
 limitations are very likely to change between Duktape releases.
