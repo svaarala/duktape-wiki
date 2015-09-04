@@ -29,6 +29,10 @@ Welcome to the official Duktape Wiki!
 * compilers
 * standard libraries: musl, uclibc
 
+## Miscellaneous
+
+* [[Debug clients|DebugClients]]
+
 ## Contributing, copyright, and license
 
 * https://github.com/svaarala/duktape-wiki
