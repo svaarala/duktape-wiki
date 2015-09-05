@@ -1,0 +1,14 @@
+language: c  # doesn't really matter
+sudo: required
+#before_install:
+#  - sudo apt-get update -qq
+script:
+  - |
+    grep FIXME *.*
+    if [ $? -eq 0 ]; then
+        echo Matched one or more FIXMEs
+        false
+    else
+        echo No FIXMEs matched
+        true
+    fi

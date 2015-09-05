@@ -1,6 +1,6 @@
 # How to write a native constructor function
 
-FIXME.
+TBD.
 
 ```js
 function test() {
