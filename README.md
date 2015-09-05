@@ -1,6 +1,8 @@
 Duktape Wiki
 ============
 
+[![Build Status](https://travis-ci.org/svaarala/duktape-wiki.svg?branch=master)](https://travis-ci.org/svaarala/duktape-wiki)
+
 This is the repo for the official Duktape Wiki, http://wiki.duktape.org.
 
 Duktape Wiki is edited in the [duktape-wiki](https://github.com/svaarala/duktape-wiki)
