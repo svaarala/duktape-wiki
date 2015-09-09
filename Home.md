@@ -19,8 +19,9 @@ Welcome to the official Duktape Wiki!
 
 ## Config and feature options
 
-* [[Config options|ConfigOptions]] (DUK_USE_xxx) used in [duk_config.h](https://github.com/svaarala/duktape/blob/master/doc/duk-config.rst)
+* [[Configuring Duktape for build|Configuring]]
 * [[Feature options|FeatureOptions]] (DUK_OPT_xxx) used as compiler command line options (up to Duktape 1.3)
+* [[Config options|ConfigOptions]] (DUK_USE_xxx) used in [duk_config.h](https://github.com/svaarala/duktape/blob/master/doc/duk-config.rst)
 
 ## Portability
 
