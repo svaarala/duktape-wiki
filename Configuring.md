@@ -4,9 +4,22 @@
 
 In Duktape 1.2 Duktape features are configured through feature options:
 
-* If defaults are acceptable, compile Duktape as is.  Otherwise use
-  `DUK_OPT_xxx` feature options when compiling both Duktape and the
-  application.  For available feature options, see:
+* If defaults are acceptable, compile Duktape as is.  For example:
+
+  ```
+  $ gcc -std=c99 -Os -o hello -Isrc src/duktape.c hello.c -lm
+  ```
+
+* Otherwise use `DUK_OPT_xxx` feature options on the compiler command line
+  when compiling both Duktape and your application (if they're compiled
+  separately).  For example:
+
+  ```
+  $ gcc -std=c99 -Os -o hello -Isrc -DDUK_OPT_FASTINT \
+          src/duktape.c hello.c -lm
+  ```
+
+  For available feature options, see:
   https://github.com/svaarala/duktape/blob/master/doc/feature-options.rst
 
 The table below summarizes the most commonly needed feature options, in no
@@ -115,23 +128,33 @@ for build:
   `src-separate/duk_config.h`).  If default features are not desirable,
   provide `DUK_OPT_xxx` feature options when compiling both Duktape and
   the application.  This matches Duktape 1.2, but there's an external
-  `duk_config.h` header.
+  `duk_config.h` header:
+
+  ```
+  # src/ contains default duk_config.h (comes with distributable)
+  $ gcc -std=c99 -Os -o hello -Isrc -DDUK_OPT_FASTINT \
+          src/duktape.c hello.c -lm
+  ```
 
 * Generate a new autodetect `duk_config.h` using `genconfig` with config
   option overrides given either on the command line or in YAML/header
   files.  For example, to enable fastint support and to disable
   bufferobjects:
 
-      $ sudo apt-get install python-yaml
+  ```
+  $ sudo apt-get install python-yaml
 
-      $ python config/genconfig.py \
-              --metadata config/genconfig_metadata.tar.gz \
-              --output duk_config.h \
-              -DDUK_USE_FASTINT \
-              -UDUK_USE_BUFFEROBJECT_SUPPORT \
-              autodetect-header
+  $ python config/genconfig.py \
+          --metadata config/genconfig_metadata.tar.gz \
+          --output myinclude/duk_config.h \
+          -DDUK_USE_FASTINT \
+          -UDUK_USE_BUFFEROBJECT_SUPPORT \
+          autodetect-header
 
-      # Then use duk_config.h in build
+  # Ensure myinclude/duk_config.h comes first in include path.
+  $ gcc -std=c99 -Os -o hello -Imyinclude -Isrc \
+          src/duktape.c hello.c -lm
+  ```
 
   There are several alternatives to defining option overrides, see:
   https://github.com/svaarala/duktape/blob/master/doc/duk-config.rst#genconfig-option-overrides
