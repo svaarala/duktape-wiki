@@ -22,6 +22,15 @@ In Duktape 1.2 Duktape features are configured through feature options:
   For available feature options, see:
   https://github.com/svaarala/duktape/blob/master/doc/feature-options.rst
 
+* When compiling Duktape as a Windows DLL, you must define `DUK_OPT_DLL_BUILD`
+  for both Duktape and application build.  For example:
+
+  ```
+  > cl /O2 /DDUK_OPT_DLL_BUILD /Isrc /LD src\duktape.c
+  > cl /O2 /DDUK_OPT_DLL_BUILD /Isrc hello.c duktape.lib
+  > hello.exe
+  ```
+
 The table below summarizes the most commonly needed feature options, in no
 particular order:
 
