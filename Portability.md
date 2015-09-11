@@ -322,6 +322,13 @@ git repository to see how Dukweb is compiled.
   requires no Duktape changes, see:
   [datetime.rst](https://github.com/svaarala/duktape/blob/master/doc/datetime.rst).
 
+* Some exotic platforms have broken double-to-integer or integer-to-double
+  casts, which causes e.g. https://github.com/svaarala/duktape/issues/336.
+  At the moment there's no easy workaround because casts are used inside
+  Duktape in several places.  A possible future fix is to use macros for such
+  casts, so that you can fix the casts in a platform dependent manner and edit
+  `duk_config.h` to provide working casting macros.
+
 * Since Duktape 1.3 almost all portability related includes and defines are
   in an external [duk_config.h](https://github.com/svaarala/duktape/blob/master/doc/duk-config.rst)
   header which you can modify freely to suit exotic platforms.
