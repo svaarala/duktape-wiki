@@ -14,7 +14,6 @@ Welcome to the official Duktape Wiki!
 * [[How to work with buffers|HowtoBuffers]]
 * [[How to use modules|HowtoModules]]
 * [[How to use coroutines|HowtoCoroutines]]
-* [[How to optimize performance|HowtoPerformance]]
 * [[How to write a native construction function|HowtoNativeConstructor]]
 
 ## Config and feature options
@@ -30,6 +29,10 @@ Welcome to the official Duktape Wiki!
 * architectures
 * compilers
 * standard libraries: musl, uclibc
+
+## Performance
+
+* [[How to optimize performance|Performance]]
 
 ## Miscellaneous
 
