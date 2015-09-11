@@ -26,8 +26,8 @@ In Duktape 1.2 Duktape features are configured through feature options:
   for both Duktape and application build.  For example:
 
   ```
-  > cl /O2 /DDUK_OPT_DLL_BUILD /Isrc /LD src\duktape.c
-  > cl /O2 /DDUK_OPT_DLL_BUILD /Isrc hello.c duktape.lib
+  > cl /O2 /W3 /DDUK_OPT_DLL_BUILD /Isrc /LD src\duktape.c
+  > cl /O2 /W3 /DDUK_OPT_DLL_BUILD /Fehello.exe /Isrc hello.c duktape.lib
   > hello.exe
   ```
 
