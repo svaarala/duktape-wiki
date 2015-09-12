@@ -33,6 +33,7 @@ Welcome to the official Duktape Wiki!
 ## Performance
 
 * [[How to optimize performance|Performance]]
+* [[Duktape 1.3.0 performance results|Performance130]]
 
 ## Miscellaneous
 
