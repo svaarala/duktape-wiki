@@ -1,15 +1,26 @@
 # Duktape 1.3.0 performance measurement
 
-Measured using an "Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz" laptop.
-Duktape is compiled with gcc-4.8.4 (Ubuntu 14.04.3) on x64, using
-`gcc -O2`, debugger and interrupt executor support enabled, fastints
-enabled.
+Measurement host:
+
+* "Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz" laptop
+
+Duktape is compiled with:
+
+* gcc-4.8.4 (Ubuntu 14.04.3) on x64
+* `gcc -O2`
+* debugger and interrupt executor support enabled
+* fastints enabled
+* `JSON.stringify()` fast path disabled
 
 Note that:
 
 * These are microbenchmarks, and don't necessarily represent application
   performance very well.  Microbenchmarks are useful for measuring how well
   different parts of the engine work.
+
+* Only relative numbers matter.  Loop counts differ between test cases so
+  the numbers for two tests are not directly comparable.  Absolute numbers
+  may also change between test runs if test target is different.
 
 * The measurement process is not very accurate: it's based on running the
   test multiple times and measuring time using the `time` command.
