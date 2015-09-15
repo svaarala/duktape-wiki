@@ -34,7 +34,7 @@ Note that:
 <th>duk 1.2.3</th>
 <th>duk 1.1.3</th>
 <th>rhino</th>
-<th>lua</th>
+<th>lua 5.1</th>
 <th>python</th>
 <th>perl</th>
 <th>ruby</th>
