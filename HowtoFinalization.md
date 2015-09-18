@@ -49,6 +49,36 @@ mark-and-sweep finalizer
 Cleaning up...
 ```
 
+## Using a native finalizer
+
+The finalizer function can also be a Duktape/C function.  Here's an example
+of setting up a finalizer from C code:
+
+```c
+/* Dummy object for finalization test. */
+duk_push_object(ctx);
+
+/* Finalizer gets a single argument, the object being finalized. */
+duk_push_c_function(ctx, my_finalizer, 1 /*nargs*/);
+
+/* Set finalizer. */
+duk_set_finalizer(ctx, -2);  /* [ object func ] -> [ object ] */
+
+/* Object-with-finalizer left on stack top. */
+```
+
+The finalizer itself is an ordinary Duktape/C function:
+
+```c
+duk_ret_t my_finalizer(duk_context *ctx) {
+    /* Value stack index 0 has the object to be finalized. */
+}
+```
+
+FIXME: add a concrete native resource, e.g. a FILE handle
+
+FIXME: use an internal property, tolerate multiple finalization
+
 ## Adding a finalizer to a prototype object
 
 If you have many objects of the same type, you can add a finalizer to the
