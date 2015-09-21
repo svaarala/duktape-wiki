@@ -26,6 +26,10 @@
 <td>Running scripts in a separate isolated context from Node.js</td>
 </tr>
 <tr>
+<td><a href="https://github.com/mrautio/duktape-opengl/" target="_blank">duktape-opengl</a></td>
+<td>OpenGL bindings for Duktape</td>
+</tr>
+<tr>
 <td><a href="https://github.com/judofyr/duktape.rb" target="_blank">duktape.rb</a></td>
 <td>Ruby binding for Duktape</td>
 </tr>
