@@ -37,6 +37,7 @@ Welcome to the official Duktape Wiki!
 
 ## Miscellaneous
 
+* [[Projects using Duktape|ProjectsUsingDuktape]]
 * [[Debug clients|DebugClients]]
 
 ## Contributing, copyright, and license
