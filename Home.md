@@ -15,6 +15,7 @@ Welcome to the official Duktape Wiki!
 * [[How to use modules|HowtoModules]]
 * [[How to use coroutines|HowtoCoroutines]]
 * [[How to write a native construction function|HowtoNativeConstructor]]
+* [[How to iterate over an array|HowtoIterateArray]]
 
 ## Config and feature options
 
