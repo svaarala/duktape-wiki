@@ -16,6 +16,7 @@ Welcome to the official Duktape Wiki!
 * [[How to use coroutines|HowtoCoroutines]]
 * [[How to write a native construction function|HowtoNativeConstructor]]
 * [[How to iterate over an array|HowtoIterateArray]]
+* [[How to augment error objects|HowtoAugmentErrorObjects]]
 
 ## Config and feature options
 
