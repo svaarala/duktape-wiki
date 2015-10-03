@@ -37,9 +37,9 @@ Welcome to the official Duktape Wiki!
 
 ## Low memory optimization
 
-* Low memory environments: [[low-memory.rst|https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst]]
-* Low memory config option suggestions: [[low-memory.yaml|https://github.com/svaarala/duktape/blob/master/config/examples/low_memory.yaml]]
-* Hybrid pool allocator example: [[alloc-hybrid|https://github.com/svaarala/duktape/tree/master/examples/alloc-hybrid]]
+* Low memory environments: [low-memory.rst](https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst)
+* Low memory config option suggestions: [low-memory.yaml](https://github.com/svaarala/duktape/blob/master/config/examples/low_memory.yaml)
+* Hybrid pool allocator example: [alloc-hybrid](https://github.com/svaarala/duktape/tree/master/examples/alloc-hybrid)
 
 ## Miscellaneous
 
