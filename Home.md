@@ -35,6 +35,12 @@ Welcome to the official Duktape Wiki!
 * [[How to optimize performance|Performance]]
 * [[Duktape 1.3.0 performance results|Performance130]]
 
+## Low memory optimization
+
+* Low memory environments: [low-memory.rst](https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst)
+* Low memory config option suggestions: [low-memory.yaml](https://github.com/svaarala/duktape/blob/master/config/examples/low_memory.yaml)
+* Hybrid pool allocator example: [alloc-hybrid](https://github.com/svaarala/duktape/tree/master/examples/alloc-hybrid)
+
 ## Miscellaneous
 
 * [[Projects using Duktape|ProjectsUsingDuktape]]
