@@ -508,10 +508,14 @@ intact.
 ## JSON.stringify() fast path
 
 There's a fast path for `JSON.stringify()` serialization which is used when
-there is no "replacer" argument and no indent.  The fast path assumes that it
-can serialize the argument value without risking any side effects which might
-mutate the value being serialized, and will fall back to the slower default
-algorithm if necessary.  This happens at least when:
+there is no "replacer" argument.  Indent argument and JX/JC support was added
+to the fast path in Duktape 1.4.0.
+
+The fast path assumes that it can serialize the argument value without risking
+any side effects which might mutate the value being serialized, and will fall
+back to the slower default algorithm if necessary.
+
+This happens at least when:
 
 * any object has a `toJSON()` property
 
