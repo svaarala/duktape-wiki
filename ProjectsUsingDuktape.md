@@ -77,6 +77,10 @@
 <td><a href="https://github.com/solettaproject/soletta/" target="_blank">Soletta</a></td>
 <td>IoT framework</td>
 </tr>
+<tr>
+<td><a href="https://github.com/abiliojr/sqlite-js" target="_blank">SQLite's Cafe</a></td>
+<td>JavaScript for SQLite</td>
+</tr>
 </table>
 
 If you're using Duktape in your project, send an e-mail or open a GitHub
