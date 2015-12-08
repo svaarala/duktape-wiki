@@ -822,46 +822,38 @@ var u8Slice = new Uint8Array(arrayBuffer, nodeSlice.byteOffset, nodeSlice.byteLe
 This is still not very convenient so "slice copying" may need improvements in
 future versions.
 
-### Typed array constructors do not accept a plain buffer argument
+### Typed array constructors accept a plain buffer argument since Duktape 1.4.0
 
 Typed array constructors recognize objects as potential providers of
 initialization values, e.g. as:
 
-```js
-var u8 = new Uint8Array([ 0x41, 0x42, 0x43, 0x44 ]);
+```
+duk> u8 = new Uint8Array([ 0x41, 0x42, 0x43, 0x44 ]); Duktape.enc('jx', u8);
+= |41424344|
 ```
 
+`Duktape.Buffer` values as similarly treated as value initializers, and since
+Duktape 1.4.0 a plain buffer value is treated the same as a `Duktape.Buffer`:
+
+```
+duk> buf = new Duktape.Buffer('foo'); Duktape.enc('jx', new Int16Array(buf));
+= |66006f006f00|
+duk> buf = Duktape.Buffer('foo'); Duktape.enc('jx', new Int16Array(buf));
+= |66006f006f00|
+```
+
+Because the argument is treated as an initializer, a new underlying buffer
+will be created instead of sharing the existing one.
+
 Non-object arguments are integer coerced and used as a length for the new
-`ArrayBuffer` automatically created.  For example the string `"5"` gets
+`ArrayBuffer` automatically created (Duktape 1.3.0 would treat plain buffers
+this way too, which is quite confusing).  For example the string `"5"` gets
 treated as a length:
 
 ```js
 var u8 = new Uint8Array("5");
 print(u8.byteLength);  // -> 5
 ```
-
-Similarly, any buffer arguments are integer coerced and are not taken into
-use as the underlying buffer value.  This can lead to confusing behavior
-because the buffer contents are parsed like strings.  Usually the integer
-coercion of a buffer is `NaN` which further coerces to zero:
-
-```js
-var plain = Duktape.dec('hex', '4141');  // "AB" -> NaN -> 0
-var u8 = new Uint8Array(plain);
-print(u8.byteLength);  // -> 0
-```
-
-But the result can also be similar to using the string `"5"`:
-
-```js
-var plain = Duktape.dec('hex', '3536');  // "56" -> 56
-var u8 = new Uint8Array(plain);
-print(u8.byteLength);  // -> 56
-```
-
-To avoid confusion: **never use a plain buffer as a typed array constructor
-argument**.  This is a candidate for improvement so that plain buffers would
-be treated similarly to buffer objects, i.e. treated like array initializers.
 
 If you want to reuse a plain buffer as the underlying buffer of a typed
 array, you need to go through an `ArrayBuffer` which does recognize plain
@@ -922,6 +914,9 @@ print(Duktape.enc('jx', Duktape.Buffer(u16)));
 // |41004200430044004500460047004800|
 ```
 
+Starting from Duktape 1.4.0 a plain buffer argument is treated the same as
+`Duktape.Buffer`, i.e. used as a value initializer.
+
 ## Avoiding Duktape custom behaviors
 
 As a general rule it is best to start with Khronos/ES6 typed arrays because
@@ -953,7 +948,7 @@ var u8 = new Uint8Array(4);  // shorthand
 u8[0] = 123;
 ```
 
-### Avoid custom properties in general
+### Avoid custom properties
 
 These extra properties are provided by Duktape, avoid them if possible:
 
@@ -961,7 +956,7 @@ These extra properties are provided by Duktape, avoid them if possible:
 
   - byteLength (length is standard)
   - byteOffset
-  - BYTES_PER_ELEMENT
+  - BYTES_PER_ELEMENT (= 1)
 
 * ArrayBuffer:
 
@@ -987,8 +982,8 @@ creating a temporary `Uint8Array` object.
 ### Avoid relying on memory zeroing of Node.js Buffers
 
 Khronos/ES6 specification requires that new `ArrayBuffer` values be filled
-with zeroes.  Duktape follows this unless the `DUK_USE_ZERO_BUFFER_DATA`
-config option is turned off.
+with zeroes.  Starting from Duktape 1.4.0, Duktape follows this even when the
+`DUK_USE_ZERO_BUFFER_DATA` config option is turned off.
 
 Node.js does *not* zero allocated `Buffer` objects by default.  Duktape
 zeroes Node.js `Buffer` objects too, unless the `DUK_USE_ZERO_BUFFER_DATA`
