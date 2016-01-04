@@ -18,6 +18,10 @@
 <td>Libuv bindings for Duktape</td>
 </tr>
 <tr>
+<td><a href="https://github.com/buaabyl/dukserver" target="_blank">dukserver</a></td>
+<td>HTTP server based on Duktape</td>
+</tr>
+<tr>
 <td><a href="https://github.com/ReneHollander/duktape-java" target="_blank">duktape-java</a></td>
 <td>A Java binding for Duktape</td>
 </tr>
