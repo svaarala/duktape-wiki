@@ -34,7 +34,8 @@ Welcome to the official Duktape Wiki!
 ## Performance
 
 * [[How to optimize performance|Performance]]
-* [[Duktape 1.3.0 performance results|Performance130]]
+* [[Duktape 1.3.0 performance measurement|Performance130]]
+* [[Duktape 1.4.0 performance measurement|Performance140]]
 
 ## Low memory optimization
 
