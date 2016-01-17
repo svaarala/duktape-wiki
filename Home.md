@@ -31,7 +31,7 @@ Welcome to the official Duktape Wiki!
 * architectures
 * compilers
 * standard libraries: musl, uclibc
-* [[CompatibilityTypeScript|TypeScript]]
+* [[Compatibility with TypeScript|CompatibilityTypeScript]]
 
 ## Performance
 
