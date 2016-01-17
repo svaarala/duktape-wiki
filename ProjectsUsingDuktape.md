@@ -70,6 +70,10 @@
 <td>Media center, using Duktape for plugins</td>
 </tr>
 <tr>
+<td><a href="http://www.netsurf-browser.org/" target="_blank">NetSurf</a></td>
+<td>Web browser, using Duktape for browser Javascript</td>
+</tr>
+<tr>
 <td><a href="http://www.radare.org/" target="_blank">radare</a></td>
 <td>Using Duktape for reverse engineering scripts</td>
 </tr>
