@@ -46,6 +46,10 @@
 <td>Using Duktape for home automation event scripting</td>
 </tr>
 <tr>
+<td><a href="http://www.frida.re/" target="_blank">Frida</a></td>
+<td>Using Duktape for reverse engineering binaries</td>
+</tr>
+<tr>
 <td><a href="https://github.com/olebedev/go-duktape" target="_blank">go-duktape</a></td>
 <td>Go binding for Duktape</td>
 </tr>
