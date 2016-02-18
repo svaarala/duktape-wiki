@@ -74,6 +74,10 @@
 <td>Media center, using Duktape for plugins</td>
 </tr>
 <tr>
+<td><a href="https://github.com/syoyo/nanocanvas" target="_blank">NanoCanvas</a></td>
+<td>A portable JavaScript vector graphics engine, using Duktape for scripting</td>
+</tr>
+<tr>
 <td><a href="http://www.netsurf-browser.org/" target="_blank">NetSurf</a></td>
 <td>Web browser, using Duktape for browser Javascript</td>
 </tr>
