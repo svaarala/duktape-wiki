@@ -17,6 +17,7 @@ Welcome to the official Duktape Wiki!
 * [[How to write a native construction function|HowtoNativeConstructor]]
 * [[How to iterate over an array|HowtoIterateArray]]
 * [[How to augment error objects|HowtoAugmentErrorObjects]]
+* [[How to use debugger heap walking|HowtoDebuggerHeapWalking]]
 
 ## Config and feature options
 
