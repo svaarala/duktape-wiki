@@ -1,5 +1,10 @@
 # How to write a native constructor function
 
+FIXME: explain that you can always use `duk_set_prototype()` to forcibly
+set a prototype in the constructor, even when not using the replacement
+instance approach. It's much shorter than using the `.prototype` property
+in practice.
+
 A native constructor function works essentially the same way an Ecmascript
 constructor does, except that Duktape/C functions don't have a `.prototype`
 property by default.
