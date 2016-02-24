@@ -64,6 +64,7 @@ Screenshots:
 <td>TCP</td>
 <td>binary</td>
 <td>Visual Studio Code debugger extension for Duktape runtime.  Screenshots:
-<a href="https://github.com/harold-b/musashi-vscode-deubgger/blob/master/img/musa-debug.gif">screenshot1</a>.</td>
+<a href="https://github.com/harold-b/musashi-vscode-deubgger/blob/master/img/musa-debug.gif">screenshot1</a>,
+<a href="https://camo.githubusercontent.com/02a89271785ba8a040ca82bfa64405db3a7b6538/68747470733a2f2f692e696d67736166652e6f72672f663132383562322e676966">screenshot2</a>.</td>
 </tr>
 </table>
