@@ -17,6 +17,7 @@ Welcome to the official Duktape Wiki!
 * [[How to write a native constructor function|HowtoNativeConstructor]]
 * [[How to iterate over an array|HowtoIterateArray]]
 * [[How to augment error objects|HowtoAugmentErrorObjects]]
+* [[How to decode Duktape bytecode|HowtoDecodeBytecode]]
 
 ## Config and feature options
 
