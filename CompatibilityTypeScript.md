@@ -14,4 +14,4 @@ See:
 
 - https://github.com/svaarala/duktape/issues/523#issuecomment-172391196
 
-- https://github.com/shaddockh/AtomicGameEngine/blob/TSH-ATOMIC-TYPESCRIPT/Script/AtomicEditor/extensionServices/resourceServices/TypescriptLanguageService.ts
+- https://github.com/AtomicGameEngine/AtomicGameEngine/pull/614
