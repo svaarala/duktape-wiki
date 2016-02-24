@@ -59,4 +59,11 @@ Screenshots:
 Screenshots:
 <a href="https://raw.githubusercontent.com/dzzie/duk4vb/master/vb_examples/with_debug/screenshot.png">screenshot1</a>.</td>
 </tr>
+<tr>
+<td><a href="https://github.com/harold-b/musashi-vscode-deubgger">Musashi debugger</a></td>
+<td>TCP</td>
+<td>binary</td>
+<td>Visual Studio Code debugger extension for Duktape runtime.  Screenshots:
+<a href="https://github.com/harold-b/musashi-vscode-deubgger/blob/master/img/musa-debug.gif">screenshot1</a>.</td>
+</tr>
 </table>
