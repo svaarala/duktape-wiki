@@ -14,6 +14,10 @@
 <td>Using Duktape for <a href="http://steamcommunity.com/workshop/browse/?appid=241240&amp;requiredtags[]=Mod" target="_blank">mods</a></td>
 </tr>
 <tr>
+<td><a href="https://github.com/lzubiaur/duk-glfw" target="_blank">duk-glfw</a></td>
+<td><a href="http://www.glfw.org/">GLFW</a> bindings for Duktape</td>
+</tr>
+<tr>
 <td><a href="http://dukluv.io/" target="_blank">DukLuv.io</a></td>
 <td>Libuv bindings for Duktape</td>
 </tr>
