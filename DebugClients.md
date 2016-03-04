@@ -49,7 +49,8 @@ Table columns:
 Screenshots:
 <a href="https://camo.githubusercontent.com/60a760f4841d6ee438b15767ca55128df7ecaf5d/687474703a2f2f693137322e70686f746f6275636b65742e636f6d2f616c62756d732f7732342f6661746365726265727573312f72616e67656572726f722e706e67">screenshot1</a>,
 <a href="https://drive.google.com/folderview?id=0BxPKLRqQOUSNbFRvenU1V2hkYjQ&usp=drive_web">screenshot2</a>,
-<a href="https://camo.githubusercontent.com/086d09f4bbf7c59cc41dbc3a8eb9d50aa2b73fa3/687474703a2f2f692e696d6775722e636f6d2f796b75387652482e706e67">screenshot3</a>.</td>
+<a href="https://camo.githubusercontent.com/086d09f4bbf7c59cc41dbc3a8eb9d50aa2b73fa3/687474703a2f2f692e696d6775722e636f6d2f796b75387652482e706e67">screenshot3</a>,
+<a href="https://camo.githubusercontent.com/7d763c8fe7d60fefa753f01681ca4064e4104c04/687474703a2f2f692e696d6775722e636f6d2f5453454e5932722e706e67">screenshot4</a>.</td>
 </tr>
 <tr>
 <td><a href="https://github.com/dzzie/duk4vb">duk4vb</a></td>
