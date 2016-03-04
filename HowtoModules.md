@@ -1,5 +1,8 @@
 # How to use modules
 
+FIXME: add an example of how a native module can be returned directly
+from `require()` bu replacing `module.exports`.
+
 ## Module search function
 
 The module search function encapsulates all platform specific concerns,
