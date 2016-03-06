@@ -18,7 +18,7 @@ Welcome to the official Duktape Wiki!
 * [[How to iterate over an array|HowtoIterateArray]]
 * [[How to augment error objects|HowtoAugmentErrorObjects]]
 * [[How to decode Duktape bytecode|HowtoDecodeBytecode]]
-* [[How to work with non-BMP characters|HowtoNonBmpCharacters.md]]
+* [[How to work with non-BMP characters|HowtoNonBmpCharacters]]
 
 ## Config and feature options
 
