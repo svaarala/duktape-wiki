@@ -20,6 +20,10 @@ Welcome to the official Duktape Wiki!
 * [[How to decode Duktape bytecode|HowtoDecodeBytecode]]
 * [[How to work with non-BMP characters|HowtoNonBmpCharacters]]
 
+## Frequently asked questions
+
+* [[Internal and external prototype|InternalExternalPrototype]]
+
 ## Config and feature options
 
 * [[Configuring Duktape for build|Configuring]]
