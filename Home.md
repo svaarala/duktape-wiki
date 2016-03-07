@@ -22,6 +22,7 @@ Welcome to the official Duktape Wiki!
 
 ## Frequently asked questions
 
+* [[Development setup for developing Duktape|DevelopmentSetup]]
 * [[Internal and external prototype|InternalExternalPrototype]]
 
 ## Config and feature options
