@@ -62,6 +62,10 @@
 <td>Haskell binding for Duktape</td>
 </tr>
 <tr>
+<td><a href="http://projects.malikania.fr/irccd">Irccd</a></td>
+<td>IRC bot written in C++14 and Javascript, using Duktape for scripting</td>
+</tr>
+<tr>
 <td><a href="https://github.com/ldx/libpac" target="_blank">libpac</a></td>
 <td>Using Duktape to parse proxy PAC files</td>
 </tr>
