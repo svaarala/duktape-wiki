@@ -208,7 +208,7 @@ var handler = {
     has: function (targ, key) {
         print('has called for key=' + key);
         return key in targ;  // return unmodified existence status
-    }
+    },
 
     get: function (targ, key, recv) {
         print('get called for key=' + key);
