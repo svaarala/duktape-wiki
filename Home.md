@@ -20,6 +20,7 @@ Welcome to the official Duktape Wiki!
 * [[How to augment error objects|HowtoAugmentErrorObjects]]
 * [[How to decode Duktape bytecode|HowtoDecodeBytecode]]
 * [[How to work with non-BMP characters|HowtoNonBmpCharacters]]
+* [[How to get a reference to the global object|HowtoGlobalObjectReference]]
 
 ## Frequently asked questions
 
