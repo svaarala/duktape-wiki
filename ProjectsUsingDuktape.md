@@ -102,6 +102,10 @@
 <td>Using Duktape for scripting</td>
 </tr>
 <tr>
+<td><a href="https://github.com/saghul/sjs" target="_blank">Skookum JS</a></td>
+<td>A <i>skookum</i> JavaScript runtime</td>
+</tr>
+<tr>
 <td><a href="https://github.com/solettaproject/soletta/" target="_blank">Soletta</a></td>
 <td>IoT framework</td>
 </tr>
