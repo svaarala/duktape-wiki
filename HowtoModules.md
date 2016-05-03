@@ -27,14 +27,7 @@ The arguments of the module search function are:
   loading native (Duktape/C) modules.
 
 * A `module` object which provides additional information about the module
-  being loaded, currently containing:
-
-  - `.id`: a resolved absolute identifier for the module being loaded.
-
-  - `.exports`: the current exports table, initially same as `exports`.
-    Can be overwritten by modSearch() and/or an Ecmascript module.  Overwriting
-    `module.exports` allows a C module or a native function/constructor to be
-    returned directly from `require()`.
+  being loaded, see separate section below with property list.
 
 The module search function is expected to look up the module, usually based
 on the `id` argument, and:
@@ -66,6 +59,52 @@ Also see:
 
 * Recommended (but not mandatory) convention for writing C modules:
   [c-module-convention.rst](https://github.com/svaarala/duktape/blob/master/doc/c-module-convention.rst).
+
+## Duktape's module object
+
+The `module` argument which is given to both modSearch() and an Ecmascript
+module being loaded has the following properties:
+
+<table>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>.id</td>
+<td>Resolved absolute module ID, e.g. <code>foo/quux/./../bar</code>
+    would resolve to <code>foo/bar</code>.</td>
+</tr>
+<tr>
+<td>.exports</td>
+<td>The current exports table, initially same as <code>exports</code>.
+    Can be overwritten by modSearch() and/or an Ecmascript module.  Overwriting
+    <code>module.exports</code> allows a C module or a native function/constructor
+    to be returned directly from <code>require()</code>.
+    Added in Duktape 1.3.</td>
+</tr>
+<tr>
+<td>.filename</td>
+<td>Filename associated with the module, used as the <code>.fileName</code>
+    property of the temporary module wrapper function during module loading
+    which affects e.g. tracebacks.  Can be set by modSearch(); unset by default
+    which causes the fully resolved module ID (e.g. <code>foo/bar</code>) to
+    be used for the module function <code>.fileName</code> property.
+    Capitalization (module.filename instead of module.fileName) matches
+    <a href="https://nodejs.org/api/modules.html#modules_module_filename">Node.js module.filename</a>.
+    Duktape specific, added in Duktape 1.5.
+</tr>
+<tr>
+<td>.name</td>
+<td>Function name associated with the module, used as the <code>.name</code>
+    property of the temporary module wrapper function during module loading
+    which affects e.g. tracebacks.  Can be set by modSearch(); unset by default
+    which causes the last component of the fully resolved module ID (e.g.
+    <code>bar</code>) to be used for the module function <code>.name</code>
+    property.
+    Duktape specific, added in Duktape 1.5.
+</tr>
+</table>
 
 ## Implementing a module search function
 
