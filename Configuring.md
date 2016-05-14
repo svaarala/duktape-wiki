@@ -1,5 +1,9 @@
 # Configuring Duktape for build
 
+FIXME: add Duktape 2.x changes
+
+FIXME: debug option changes
+
 ## Duktape 1.3 to 1.5
 
 In Duktape 1.3 there are three supported ways of configuring Duktape features
