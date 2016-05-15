@@ -4,8 +4,20 @@ Welcome to the official Duktape Wiki!
 
 ## Documentation
 
-* http://duktape.org/guide.html
-* http://duktape.org/api.html
+* http://duktape.org/guide.html - older:
+  [1.5](http://duktape.org/1.5.0/guide.html)
+  [1.4](http://duktape.org/1.4.0/guide.html)
+  [1.3](http://duktape.org/1.3.0/guide.html)
+  [1.2](http://duktape.org/1.2.0/guide.html)
+  [1.1](http://duktape.org/1.1.0/guide.html)
+  [1.0](http://duktape.org/1.0.0/guide.html)
+* http://duktape.org/api.html - older:
+  [1.5](http://duktape.org/1.5.0/api.html)
+  [1.4](http://duktape.org/1.4.0/api.html)
+  [1.3](http://duktape.org/1.3.0/api.html)
+  [1.2](http://duktape.org/1.2.0/api.html)
+  [1.1](http://duktape.org/1.1.0/api.html)
+  [1.0](http://duktape.org/1.0.0/api.html)
 
 ## How-To
 
