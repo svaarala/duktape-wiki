@@ -21,6 +21,7 @@ Welcome to the official Duktape Wiki!
 
 ## How-To
 
+* FIXME: howto for elementary file I/O: readFile, writeFile, listDir, evalFile, etc.
 * [[How to use virtual properties|HowtoVirtualProperties]]
 * [[How to use finalization|HowtoFinalization]]
 * [[How to work with buffers|HowtoBuffers]]
