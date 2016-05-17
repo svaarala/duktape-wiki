@@ -21,6 +21,7 @@ Welcome to the official Duktape Wiki!
 
 ## How-To
 
+* FIXME: howto evaluate a script file (relevant now that file I/O was removed)
 * [[How to use virtual properties|HowtoVirtualProperties]]
 * [[How to use finalization|HowtoFinalization]]
 * [[How to work with buffers|HowtoBuffers]]
