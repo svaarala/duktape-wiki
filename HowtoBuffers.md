@@ -712,12 +712,12 @@ really only two internal types for buffers:
   `duk_hbuffer_fixed`, `duk_hbuffer_dynamic`, and `duk_hbuffer_external`.
   Plain buffers don't have properties, and cannot represent slices.
 
-* A buffer object, represented by `duk_hbufferobject`.  This type is used
-  to represent all buffer objects and buffer view objects, including
-  `Duktape.Buffer`, Node.js `Buffer`, `ArrayBuffer`, `DataView`, and
-  typed array views.  A buffer object points to a plain underlying buffer,
-  provides an element type (`Uint8`, `Uint16`, etc), and may be a slice of
-  the underlying buffer.
+* A buffer object, represented by `duk_hbufferobject` (`duk_hbufobj` in
+  Duktape 2.x).  This type is used to represent all buffer objects and
+  buffer view objects, including `Duktape.Buffer`, Node.js `Buffer`,
+  `ArrayBuffer`, `DataView`, and typed array views.  A buffer object points
+  to a plain underlying buffer, provides an element type (`Uint8`, `Uint16`,
+  etc), and may be a slice of the underlying buffer.
 
 This allows for natural mixing, with some examples given below.
 
