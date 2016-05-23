@@ -117,6 +117,10 @@
 <td><a href="https://github.com/abiliojr/sqlite-js" target="_blank">SQLite's Cafe</a></td>
 <td>JavaScript for SQLite</td>
 </tr>
+<tr>
+<td><a href="https://github.com/dbohdan/tcl-duktape" target="_blank">tcl-duktape</a></td>
+<td>Tcl bindings for Duktape</td>
+</tr>
 </table>
 
 If you're using Duktape in your project, send an e-mail or open a GitHub
