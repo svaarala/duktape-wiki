@@ -54,6 +54,10 @@
 <td>Using Duktape for home automation event scripting</td>
 </tr>
 <tr>
+<td><a href="http://freewrl.sf.net" target="_blank">FreeWRL</a></td>
+<td>FreeWRL is a virtual reality browser which uses Duktape for scripting</td>
+</tr>
+<tr>
 <td><a href="http://www.frida.re/" target="_blank">Frida</a></td>
 <td>Using Duktape for reverse engineering binaries</td>
 </tr>
