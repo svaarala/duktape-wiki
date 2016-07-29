@@ -30,6 +30,11 @@
 <td>HTTP server based on Duktape</td>
 </tr>
 <tr>
+<td><a href="https://github.com/square/duktape-android#readme" target="_blank">Duktape Android</td>
+<td>Library for using Duktape on Android, integrations to Android, support for
+    binding Java to JS and JS to Java</td>
+</tr>
+<tr>
 <td><a href="https://github.com/ReneHollander/duktape-java" target="_blank">duktape-java</a></td>
 <td>A Java binding for Duktape</td>
 </tr>
