@@ -82,6 +82,97 @@ pairs as appropriate.  It's probably best to write helpers to:
 - Read a string the value stack, converting surrogate pairs (CESU-8) into
   UTF-8.
 
+For example:
+```c
+// Get a string from the duk stack, converting data from CESU-8 encoding to UTF-8.
+// Returns null if value at index is not a string, or there's insufficient memory
+// Caller is responsible for freeing returned buffer (if not null).
+// 
+char *get_utf8_string(duk_context *ctx, duk_idx_t index) {
+    duk_size_t len;
+    const duk_uint8_t *in = (duk_uint8_t *)duk_get_lstring(ctx, index, &len);
+    if (in == NULL) return NULL;
+
+    duk_uint8_t *buf = malloc(len);
+    if (buf == NULL) return NULL;
+
+    duk_uint8_t *out = buf;
+    while (*in) {
+        // next six bytes represent a codepoint encoded as UTF-16 surrogate pair
+        if (in[0] == 0xED 
+            && (in[1] & 0xF0) == 0xA0
+            && (in[2] & 0xC0) == 0x80
+            && (in[3] == 0xED)
+            && (in[4] & 0xF0) == 0xB0
+            && (in[5] & 0xC0) == 0x80) 
+        {
+            // push coding parts of 6 bytes of UTF-16 surrogate pair into a 4 byte UTF-8 codepoint
+            // adding 1 to in[1] adds 0x10000 to code-point that was subtracted for UTF-16 encoding
+            out[0] = 0xF0 | ((in[1]+1) & 0x1C) >> 2;
+            out[1] = 0x80 | ((in[1]+1) & 0x03) << 4 | (in[2] & 0x3C) >> 2;
+            out[2] = 0x80 | (in[2] & 0x03) << 4 | (in[4] & 0x0F);
+            out[3] = in[5];
+            in += 6; out += 4; 
+        } else {
+            // copy anything else as is
+            *out++ = *in++;
+        }
+    }
+    *out = '\0';
+    return (char *)buf;
+}
+
+// Push a UTF-8 string to the duk stack, first converting it to CESU-8 encoding
+// Returns a pointer to the interned string
+const char *push_utf8_string(duk_context *ctx, const char *str) {
+    const duk_uint8_t *in = (const duk_uint8_t *)str;
+    int supp_count = 0, out_size = 0;
+
+    // scan input string, look for 4 byte UTF-8 chars, calculate required buffer size
+    if (in != NULL) {
+        while (*in) {
+            if    ((in[0] & 0xF8) == 0xF0 && (in[1] & 0xC0) == 0x80
+                && (in[2] & 0xC0) == 0x80 && (in[3] & 0xC0) == 0x80)
+            {
+                supp_count++;
+                in += 4; out_size += 6;
+            } else {
+                in += 1; out_size += 1;
+            }
+        }        
+    }
+    // found no 4 byte characters to convert, so just push the string and return
+    if (supp_count == 0) {        
+        return duk_push_string(ctx, str);
+    }
+
+    // convert some UTF-8 characters to CESU-8
+    duk_uint8_t *buf = malloc(out_size + 1);
+    duk_uint8_t *out = buf;
+    in = (const duk_uint8_t *)str;
+    while (*in) {
+        if    ((in[0] & 0xF8) == 0xF0 && (in[1] & 0xC0) == 0x80
+            && (in[2] & 0xC0) == 0x80 && (in[3] & 0xC0) == 0x80)
+        {
+            out[0] = 0xED;
+            out[1] = 0xA0 | (((in[0] & 0x07) << 2 | (in[1] & 0x30) >> 4) - 1);
+            out[2] = 0x80 | (in[1] & 0x0F) << 2 | (in[2] & 0x30) >> 4;
+            out[3] = 0xED;
+            out[4] = 0xB0 | (in[2] & 0x0F);
+            out[5] = in[3];
+            in += 4; out += 6;
+        } else {
+            // copy anything else as is
+            *out++ = *in++;
+        }        
+    }
+    *out = '\0';
+    const char *result = duk_push_string(ctx, (char *)buf);
+    free(buf);
+    return result;
+}
+```
+
 ## Using Duktape UTF-8
 
 This approach is convenient for C code, because strings can be expressed
