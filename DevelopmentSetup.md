@@ -33,8 +33,8 @@ The following are optional but useful:
 * Git command line tools used to get "git describe" and other version
   metadata.
 
-* A minifier (Closure or UglifyJS2) for some Ecmascript code embedded in
-  the build.
+* Duktape 1.x: a minifier (Closure or UglifyJS2) for some Ecmascript code
+  embedded in the build.  This dependency was removed in Duktape 2.x.
 
 After making changes to Duktape sources, metadata, etc:
 
@@ -56,10 +56,12 @@ dist package such as `duktape-1.4.0.tar.xz`.  Some notes:
   directory as long as you give the git version metadata as command line
   options.
 
-* The optional minifier is used for a very small Ecmascript initialization
-  script (`src/duk_initjs.js`) embedded into the Duktape build.  If you don't
-  provide a minifier using `--minify` the script won't be minified.  The
-  impact on footprint is very small, around 500 bytes.
+* The optional minifier is used in Duktape 1.x for a very small Ecmascript
+  initialization script (`src/duk_initjs.js`) embedded into the Duktape build.
+  If you don't provide a minifier using `--minify` the script won't be
+  minified.  The impact on footprint is very small, around 500 bytes.
+  Duktape 2.x no longer embeds this initialization script so a minifier is
+  not required.
 
 Creating a dist package is the minimum step needed to work with a private fork
 effectively.  As such, the dist process has been made quite portable and should

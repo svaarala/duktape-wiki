@@ -16,7 +16,7 @@ With that caveat, here are some resources to decode the bytecode opcode format
 if you want to do so e.g. in a debug client:
 
 * Bytecode header defines:
-  https://github.com/svaarala/duktape/blob/master/src/duk_js_bytecode.h
+  https://github.com/svaarala/duktape/blob/master/src-input/duk_js_bytecode.h
 
 * Bytecode metadata used by the Node.js debugger web UI to decode instructions
   into a printable form:
@@ -25,6 +25,10 @@ if you want to do so e.g. in a debug client:
 * Node.js debugger web UI decoder/formatting function:
   https://github.com/svaarala/duktape/blob/v1.4.0/debugger/duk_debug.js#L1044-L1133
   (link is for 1.4.0; check master for the most recent version)
+
+Note that bytecode format has changed between versions.  There was a large
+bytecode rework between Duktape 1.x and 2.x, but there are also significant
+changes between minor versions.
 
 ## Decoding dump/load bytecode format
 
