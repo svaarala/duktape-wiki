@@ -33,6 +33,7 @@ Welcome to the official Duktape Wiki!
 * [[How to decode Duktape bytecode|HowtoDecodeBytecode]]
 * [[How to work with non-BMP characters|HowtoNonBmpCharacters]]
 * [[How to get a reference to the global object|HowtoGlobalObjectReference]]
+* [[How to use multiple native threads|HowtoMultipleNativeThreads]]
 
 ## Frequently asked questions
 
