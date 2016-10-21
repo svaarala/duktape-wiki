@@ -25,14 +25,14 @@ git clone --depth 1 https://github.com/svaarala/duktape.git
 
 # Genconfig generated files
 cd /tmp/wiki-rebuild-tmp/duktape
-python config/genconfig.py \
+python tools/genconfig.py \
 	--metadata config \
 	--output /tmp/wiki-rebuild-tmp/duktape-wiki/ConfigOptions.rst \
 	config-documentation
-python config/genconfig.py \
-	--metadata config \
-	--output /tmp/wiki-rebuild-tmp/duktape-wiki/FeatureOptions.rst \
-	feature-documentation
+#python tools/genconfig.py \
+#	--metadata config \
+#	--output /tmp/wiki-rebuild-tmp/duktape-wiki/FeatureOptions.rst \
+#	feature-documentation
 
 # Internal doc/ files are .rst and supported by Gollum, copy them over
 cd /tmp/wiki-rebuild-tmp/duktape
