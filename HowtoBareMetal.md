@@ -40,6 +40,15 @@ run (very minimally) with 32kB RAM.
 
 * A few native bindings, e.g. serial read/write bindings, LED flashing.
 
+It's possible to reduce footprint much below 160kB by dropping Ecmascript
+built-in bindings:
+
+* For example, a "stripped" build in Duktape master allows a command line
+  eval tool to compile to less than 80kB on x86 (not including libc etc).
+  However, in a stripped build built-ins like `Array.prototype.forEach()`
+  are missing.  You can customize the bindings more accurately, e.g. remove
+  only specific bindings, using the YAML metadata.
+
 ## Typical porting steps
 
 ### Configuration and duk_config.h
@@ -76,10 +85,19 @@ run (very minimally) with 32kB RAM.
 
   - https://github.com/svaarala/duktape/tree/master/examples/dummy-date-provider
 
-### Compiling
+* If RAM is very tight, the "ROM built-ins" option allows built-in binding
+  objects (e.g. `Math`, `Math.cos`, `Array`) to be compiled into the read-only
+  code section.  This allows Duktape to start up with about 3kB of RAM when
+  packed pointers are also used.  Using ROM built-ins increases code footprint
+  however.
+
+### Compiling and running
 
 This is obviously compiler specific, but it's important to use options that
 minimize footprint, remove any unused functions in final linking, etc.  See
 for example:
 
 * https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst#optimizing-code-footprint
+
+Enabling "execute in place" is often necessary to allow code to run directly
+from flash.
