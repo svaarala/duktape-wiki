@@ -54,7 +54,7 @@ Screenshots:
 </tr>
 <tr>
 <td><a href="https://github.com/dzzie/duk4vb">duk4vb</a></td>
-<td>TCP</td>
+<td>In process</td>
 <td>binary</td>
 <td>Debugger for Duktape running with Visual Basic 6.
 Screenshots:
