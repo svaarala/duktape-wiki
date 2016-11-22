@@ -185,6 +185,12 @@ detail below the table.
 <td>Requires some preprocessor defines, datetime resolution limited to full seconds.</td>
 </tr>
 <tr>
+<td>RISC OS</td>
+<td>GCC</td>
+<td>ARM</td>
+<td>No known issues.</td>
+</tr>
+<tr>
 <td>Emscripten</td>
 <td>Emscripten</td>
 <td>n/a</td>
