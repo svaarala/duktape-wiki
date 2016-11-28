@@ -376,8 +376,41 @@ if necessary, backing the virtual properties in an unrelated plain object.
 
 ### Examples of enumerate and ownKeys traps
 
-The `enumerate` trap is invoked for enumeration (`for (k in obj) { ... }`)
-while the `ownKeys` trap is invoked by `Object.keys()` and `Object.getOwnPropertyNames()`.
+These traps are invoked as follows:
+
+<table>
+<tr>
+<th>Call site</th>
+<th>Trap</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>Object.keys()</td>
+<td>ownKeys</td>
+<td></td>
+</tr>
+<tr>
+<td>Object.getOwnPropertyNames()</td>
+<td>ownKeys</td>
+<td></td>
+</tr>
+<tr>
+<td>for-in enumeration</td>
+<td>ownKeys</td>
+<td>In Duktape 2.x, matching ES7 semantics.</td>
+</tr>
+<tr>
+<td>for-in enumeration</td>
+<td>enumerate</td>
+<td>In Duktape 1.x, matching ES6 semantics.  However, only an array or
+    "array like" trap result is supported (early ES6 draft behavior).
+    Standard ES6 "enumerate" trap must return an iterator, but iterators
+    are not supported by Duktape 1.x.  The "enumerate" trap has been removed
+    to match ES7 semantics and is never invoked by Duktape 2.x.</td>
+</tr>
+</table>
+
+The examples below are for Duktape 1.x.
 
 To hide property names beginning with an underscore from enumeration and
 `Object.keys()` and `Object.getOwnPropertyNames()`:
