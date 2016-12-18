@@ -24,6 +24,7 @@ Welcome to the official Duktape Wiki!
 * [[How to use virtual properties|HowtoVirtualProperties]]
 * [[How to use finalization|HowtoFinalization]]
 * [[How to work with buffers|HowtoBuffers]]
+* [[How to work with symbols|HowtoSymbols]]
 * [[How to use modules|HowtoModules]]
 * [[How to use coroutines|HowtoCoroutines]]
 * [[How to persist object references in native code|HowtoNativePersistentReferences]]
