@@ -35,6 +35,8 @@ Welcome to the official Duktape Wiki!
 * [[How to get a reference to the global object|HowtoGlobalObjectReference]]
 * [[How to run on bare metal platforms|HowtoBareMetal]]
 
+* FIXME: http://wiki.duktape.org/HowtoMultipleNativeThreads.html
+
 ## Frequently asked questions
 
 * [[Development setup for developing Duktape|DevelopmentSetup]]
