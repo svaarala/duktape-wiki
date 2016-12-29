@@ -44,6 +44,7 @@ Welcome to the official Duktape Wiki!
 
 * [[Development setup for developing Duktape|DevelopmentSetup]]
 * [[Internal and external prototype|InternalExternalPrototype]]
+* [[API C types|ApiCTypes]]
 * [[Post-ES5 features|PostEs5Features]]
 
 ## Config and feature options
