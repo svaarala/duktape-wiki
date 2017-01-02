@@ -39,6 +39,7 @@ Welcome to the official Duktape Wiki!
 * [[How to work with non-BMP characters|HowtoNonBmpCharacters]]
 * [[How to get a reference to the global object|HowtoGlobalObjectReference]]
 * [[How to run on bare metal platforms|HowtoBareMetal]]
+* [[How to use enable debug prints|HowtoDebugPrints]]
 
 ## Frequently asked questions
 
