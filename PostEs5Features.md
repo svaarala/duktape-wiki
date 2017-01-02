@@ -214,6 +214,15 @@ Many of the features can be disabled through config options such as
 <td>TextEncoder() and TextDecoder(), supports UTF-8 encoding.</td>
 </tr>
 
+<tr>
+<td><a href="https://github.com/tc39/proposal-global">"global" binding</td>
+<td>TC39 proposal</td>
+<td>Full</td>
+<td>2.1.0</td>
+<td>Named binding "global" for the global object.</td>
+</tr>
+</tr>
+
 </table>
 
 ## Proxy handlers (traps)
