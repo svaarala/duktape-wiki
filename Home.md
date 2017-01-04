@@ -27,6 +27,7 @@ Welcome to the official Duktape Wiki!
 ## How-To
 
 * [[How to handle fatal errors|HowtoFatalErrors]]
+* [[How to work with value stack types|HowtoValueStackTypes]]
 * [[How to use virtual properties|HowtoVirtualProperties]]
 * [[How to use finalization|HowtoFinalization]]
 * [[How to work with buffers|HowtoBuffers]] ([[Duktape 1.x|HowtoBuffers1x]] [[Duktape 2.x|HowtoBuffers2x]])
