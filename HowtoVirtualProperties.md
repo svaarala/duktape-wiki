@@ -187,7 +187,7 @@ Ecmascript E6 `Proxy` concept, see:
   current limitations in Duktape's `Proxy` implementation.
 
 * [Proxy Objects (E6)](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-proxy-objects):
-  ES6 specification for the `Proxy` object.
+  ES2015 specification for the `Proxy` object.
 
 * [Proxy (Mozilla)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy):
   Mozilla's description of the `Proxy` implemented in Firefox, contains a lot of examples.
@@ -368,7 +368,7 @@ var handler = {
 };
 ```
 
-The ES6 semantics reject some property accesses even if the trap would allow
+The ES2015 semantics reject some property accesses even if the trap would allow
 it.  This happens if the proxy's target object has a non-configurable
 conflicting property; see E6 Sections 9.5.7, 9.5.8, 9.5.9, and 9.5.10 for details.
 You can easily avoid any such behaviors by keeping the target object empty and,
@@ -397,16 +397,16 @@ These traps are invoked as follows:
 <tr>
 <td>for-in enumeration</td>
 <td>ownKeys</td>
-<td>In Duktape 2.x, matching ES7 semantics.</td>
+<td>In Duktape 2.x, matching ES2016 semantics.</td>
 </tr>
 <tr>
 <td>for-in enumeration</td>
 <td>enumerate</td>
-<td>In Duktape 1.x, matching ES6 semantics.  However, only an array or
-    "array like" trap result is supported (early ES6 draft behavior).
-    Standard ES6 "enumerate" trap must return an iterator, but iterators
+<td>In Duktape 1.x, matching ES2015 semantics.  However, only an array or
+    "array like" trap result is supported (early ES2015 draft behavior).
+    Standard ES2015 "enumerate" trap must return an iterator, but iterators
     are not supported by Duktape 1.x.  The "enumerate" trap has been removed
-    to match ES7 semantics and is never invoked by Duktape 2.x.</td>
+    to match ES2016 semantics and is never invoked by Duktape 2.x.</td>
 </tr>
 </table>
 

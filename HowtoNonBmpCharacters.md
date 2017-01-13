@@ -11,12 +11,12 @@ represented using surrogate pairs:
 - E5.1 Section 8.4: http://www.ecma-international.org/ecma-262/5.1/#sec-8.4
 - E6 Section 6.1.4: http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types-string-type
 
-ES6 RegExp patterns having the `u` flag support non-BMP characters by
+ES2015 RegExp patterns having the `u` flag support non-BMP characters by
 interpreting the string data as UTF-16:
 
 - http://www.ecma-international.org/ecma-262/6.0/#sec-pattern-semantics
 
-ES6 `String.prototype.trim()` also has special handling for non-BMP
+ES2015 `String.prototype.trim()` also has special handling for non-BMP
 characters (again interpreting the string as UTF-16):
 
 - http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.trim

@@ -3,7 +3,7 @@
 ## Overview
 
 Up to Duktape 1.2 all buffer values (plain buffers and Duktape.Buffer objects)
-were Duktape specific.  Khronos/ES6 typed arrays and Node.js Buffer objects
+were Duktape specific.  Khronos/ES2015 typed arrays and Node.js Buffer objects
 were added in Duktape 1.3, with custom types still supported for backwards
 compatibility.  The plain buffer type is likely not going away (it is memory
 efficient and often enough) but the `Duktape.Buffer` type might be deprecated
@@ -38,13 +38,13 @@ Duktape provides the following buffer and buffer-related types:
 </tr>
 <tr>
 <td>ArrayBuffer object</td>
-<td>Yes<br />Khronos/ES6</td>
+<td>Yes<br />Khronos/ES2015</td>
 <td>1.3</td>
 <td>Standard object type for representing a byte array</td>
 </tr>
 <tr>
 <td>DataView, typed array objects</td>
-<td>Yes<br />Khronos/ES6</td>
+<td>Yes<br />Khronos/ES2015</td>
 <td>1.3</td>
 <td>View objects to access an underlying ArrayBuffer</td>
 </tr>
@@ -71,7 +71,7 @@ The three kinds of buffer values have similarities and differences:
 
 * Node.js `Buffer` provides both a `uint8` virtual array and a `DataView`-like
   set of element accessors, all in a single object.  Since Node.js is not a
-  stable specification like ES6, Node.js Buffers are more of a moving target
+  stable specification like ES2015, Node.js Buffers are more of a moving target
   than typed arrays.
 
 Here's a more detailed table of each object type, including object properties,
@@ -79,7 +79,7 @@ coercion behavior, etc:
 
 * https://github.com/svaarala/duktape/blob/master/doc/buffers.rst#summary-of-buffer-related-values
 
-Because Khronos/ES6 typed arrays is the best standard for buffers, that should
+Because Khronos/ES2015 typed arrays is the best standard for buffers, that should
 be the preferred choice for new code.  Here's a good tutorial on getting started
 with typed arrays:
 
@@ -94,7 +94,7 @@ with typed arrays:
   for dealing with buffer objects
 
 * [Khronos](https://www.khronos.org/registry/typedarray/specs/latest/) and
-  [ES6](http://www.ecma-international.org/ecma-262/6.0/index.html) typed array
+  [ES2015](http://www.ecma-international.org/ecma-262/6.0/index.html) typed array
   specifications
   ([ArrayBuffer constructor](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-arraybuffer-constructor),
    [typed array constructors](http://www.ecma-international.org/ecma-262/6.0/index.html#sec-typedarray-constructors),
@@ -701,7 +701,7 @@ buffer variant:
 ### Overview
 
 Duktape allows some mixing of buffer types.  These mixing behaviors are
-not defined in the Khronos/ES6 or Node.js API specifications, so they are
+not defined in the Khronos/ES2015 or Node.js API specifications, so they are
 necessarily Duktape custom behavior.  The buffer type mixing behavior in
 Duktape 1.3 is a work in progress and likely to change in future versions.
 
@@ -898,7 +898,7 @@ print(Duktape.enc('jx', Duktape.Buffer(i32)));
 ```
 
 This behavior is available for typed array constructors but *not* for the
-`ArrayBuffer` constructor (this is defined in Khronos/ES6 specifications).
+`ArrayBuffer` constructor (this is defined in Khronos/ES2015 specifications).
 
 As a custom buffer type mixing behavior, the typed array constructors allow
 any buffer object to be used as input.  For example, to initialize a new
@@ -919,14 +919,14 @@ Starting from Duktape 1.4.0 a plain buffer argument is treated the same as
 
 ## Avoiding Duktape custom behaviors
 
-As a general rule it is best to start with Khronos/ES6 typed arrays because
+As a general rule it is best to start with Khronos/ES2015 typed arrays because
 they are the "best standard" for buffers in Ecmascript.  When doing so, avoid
 Duktape specific behavior unless you really need to.  Particular gotchas are
 discussed below.
 
 ### Avoid index properties on ArrayBuffer
 
-Duktape allows indexed access of `ArrayBuffer` which Khronos/ES6 does not:
+Duktape allows indexed access of `ArrayBuffer` which Khronos/ES2015 does not:
 
 ```js
 var buf = new ArrayBuffer(4);
@@ -981,7 +981,7 @@ creating a temporary `Uint8Array` object.
 
 ### Avoid relying on memory zeroing of Node.js Buffers
 
-Khronos/ES6 specification requires that new `ArrayBuffer` values be filled
+Khronos/ES2015 specification requires that new `ArrayBuffer` values be filled
 with zeroes.  Starting from Duktape 1.4.0, Duktape follows this even when the
 `DUK_USE_ZERO_BUFFER_DATA` config option is turned off.
 
