@@ -244,7 +244,7 @@ Status of trap implementation:
 <tr><td>get</td><td>yes</td><td></td></tr>
 <tr><td>set</td><td>yes</td><td></td></tr>
 <tr><td>deleteProperty</td><td>yes</td><td></td></tr>
-<tr><td>enumerate</td><td>no (*)</td><td>The "enumerate" trap was removed in ES7 and for-in uses "ownKeys" trap; Duktape 1.x supports "enumerate" trap in for-in.</td></tr>
+<tr><td>enumerate</td><td>no (*)</td><td>The "enumerate" trap was removed in ES2016 and for-in uses "ownKeys" trap; Duktape 1.x supports "enumerate" trap in for-in.</td></tr>
 <tr><td>ownKeys</td><td>yes</td><td>Some trap result validation (non-configurable properties, non-extensible target) not yet implemented.</td></tr>
 <tr><td>apply</td><td>no</td><td></td></tr>
 <tr><td>construct</td><td>no</td><td></td></tr>

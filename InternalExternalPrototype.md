@@ -46,11 +46,11 @@ accessible, but it can be interacted with using:
 
 * `obj.__proto__`: an accessor property inherited from `Object.prototype`
   which allows the internal prototype to be read/written for objects which
-  inherit from `Object.prototype` (not all objects do!).  Specified in ES6,
-  also non-standard implementations before ES6.
+  inherit from `Object.prototype` (not all objects do!).  Specified in ES2015,
+  also non-standard implementations before ES2015.
 
 * `Object.getPrototypeOf()` and `Object.setPrototypeOf()`: explicit methods
-  added in ES6 to read/write the internal prototype.
+  added in ES2015 to read/write the internal prototype.
 
 * `duk_get_prototype()` and `duk_set_prototype()`: Duktape C API calls to
   read/write the internal prototype.
