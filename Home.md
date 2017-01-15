@@ -30,6 +30,7 @@ Welcome to the official Duktape Wiki!
 * [[How to use virtual properties|HowtoVirtualProperties]]
 * [[How to use finalization|HowtoFinalization]]
 * [[How to work with buffers|HowtoBuffers]] ([[Duktape 1.x|HowtoBuffers1x]] [[Duktape 2.x|HowtoBuffers2x]])
+* [[How to work with lightfuncs|HowtoLightfuncs]]
 * [[How to use modules|HowtoModules]]
 * [[How to use coroutines|HowtoCoroutines]]
 * [[How to use logging|HowtoLogging]]
