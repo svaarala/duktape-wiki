@@ -29,7 +29,7 @@ Welcome to the official Duktape Wiki!
 * [[How to handle fatal errors|HowtoFatalErrors]]
 * [[How to use virtual properties|HowtoVirtualProperties]]
 * [[How to use finalization|HowtoFinalization]]
-* [[How to work with buffers|HowtoBuffers]]
+* [[How to work with buffers|HowtoBuffers]] ([[Duktape 1.x|HowtoBuffers1x]] [[Duktape 2.x|HowtoBuffers2x]])
 * [[How to use modules|HowtoModules]]
 * [[How to use coroutines|HowtoCoroutines]]
 * [[How to use logging|HowtoLogging]]
