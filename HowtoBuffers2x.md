@@ -1,6 +1,6 @@
 # How to work with buffers in Duktape 2.x
 
-**This page applies to Duktape 1.x only.**
+**This page applies to Duktape 2.x only.**
 
 ## Introduction
 
