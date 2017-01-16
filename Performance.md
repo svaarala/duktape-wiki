@@ -3,6 +3,42 @@
 This article discusses Duktape specific performance characteristics and
 provides some hints to avoid Duktape specific performance pitfalls.
 
+## Compiler options
+
+As general guidelines:
+
+* Gcc/clang `-O2` is a good default for performance optimization.
+
+* When performance matters, profile guided optimization (PGO) is **strongly
+  recommended**.
+
+The difference between plain `-O2` and `-O2` with PGO can be very large,
+often around 20%!  For example:
+
+```
+# -O2 without PGO.
+$ time ./duk.O2 tests/perf/test-mandel.js
+[...]
+
+real	0m3.061s
+user	0m3.059s
+sys	0m0.000s
+
+# -O2 with PGO.
+$ time ./duk-pgo.O2 tests/perf/test-mandel.js
+[...]
+
+real	0m2.488s
+user	0m2.487s
+sys	0m0.000s
+```
+
+In this particular case the performance improvement is almost 20%.
+
+See:
+
+* https://github.com/svaarala/duktape/blob/master/doc/performance-sensitive.rst
+
 ## Duktape performance characteristics
 
 ### String interning
