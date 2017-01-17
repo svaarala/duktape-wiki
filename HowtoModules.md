@@ -1,5 +1,101 @@
 # How to use modules
 
+## Introduction
+
+Duktape 1.x has a built-in module loading framework which was moved into an
+[optional extra](https://github.com/svaarala/duktape/tree/master/extras/module-duktape)
+in Duktape 2.x.  This document describes how to use the Duktape 1.x module
+loading framework, with examples.  There are other module loader alternatives
+in the Duktape 2.x distributable (such as a loader with Node.js semantics; it
+also works in Duktape 1.x).  You can also implement a custom module loader from
+scratch.
+
+For Duktape 2.x remember to initialize the `module-duktape` extra before using
+module loading, see: https://github.com/svaarala/duktape/tree/master/extras/module-duktape/README.rst.
+
+You can load modules from Ecmascript code with the global `require()` function:
+
+```js
+var mod = require('foo/bar');
+mod.hello();
+```
+
+Modules are executed in a special environment defined by the CommonJS modules
+specification.  Inside this environment, variable/function declarations are
+local to the module and don't affect the global object.  The environment also
+provides three special symbols related to module loading: `exports` for
+exporting module symbols, `module` for providing module metadata (`module.id`
+in particular), and `require()` for loading further modules with relative
+module identifiers resolved in the context of the current module.  Example:
+
+```js
+// foo/bar.js
+var text = 'Hello world!';     // not visible outside the module
+var quux = require('./quux');  // loads foo/quux
+exports.hello = function () {
+    print(text);
+};
+```
+
+The module environment is implemented internally using a wrapper function
+such as:
+
+```js
+function (require, exports, module) {
+    // module source goes here
+}
+```
+
+The `module.exports` property is supported (as of Duktape 1.3) so that
+you can write modules which return e.g. a constructor function directly:
+
+```js
+// foo/bar.js
+module.exports = function adder(x, y) { return x + y; };
+
+// main.js
+var adder = require('foo/bar');
+print('2 + 3 = ' + adder(2, 3));
+```
+
+Because Duktape is embeddable and portable to different environments there
+is no standard way to search for modules.  **User code must provide a module
+search function** in `Duktape.modSearch` for module loading to work.  The
+module search function essentially maps a module identifier to the source code
+of the module (see below for more details).  Example:
+
+```js
+// See module search function details below.
+Duktape.modSearch = function (id) {
+    print('loading module:', id);
+    // Return source code for module or throw an error.
+};
+```
+
+## Properties
+
+<table>
+<tr>
+<td>require</td>
+<td>Global function for loading a module, returns a cached value if already
+loaded.  Modules see a local <code>require()</code> function which is aware
+of the current module ID so that relative identifiers are resolved correctly.</td>
+</tr>
+<tr>
+<td>Duktape.modSearch</td>
+<td><code>modSearch()</code> is a module search function which must be provided
+by user code to support module loading.</td>
+</tr>
+<tr>
+<td>Duktape.modLoaded</td>
+<td><code>modLoaded</code> is an internal module loading tracking table
+maintained by Duktape which maps a resolved absolute module identifier to the
+module's <code>module</code> object for modules which are either fully loaded
+or currently being loaded (<code>module.exports</code> is the exported value
+returned by <code>require()</code>).</td>
+</tr>
+</table>
+
 ## Module search function overview
 
 The module search function encapsulates all platform specific concerns,
