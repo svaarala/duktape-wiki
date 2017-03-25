@@ -219,7 +219,8 @@ Many of the features can be disabled through config options such as
 <td>TC39 proposal</td>
 <td>Full</td>
 <td>2.1.0</td>
-<td>Named binding "global" for the global object.</td>
+<td>Experimental, named binding "global" for the global object.  Disabled by
+    default, enable using <code>DUK_USE_GLOBAL_BINDING</code>.</td>
 </tr>
 
 <tr>
