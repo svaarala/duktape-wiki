@@ -221,6 +221,15 @@ Many of the features can be disabled through config options such as
 <td>2.1.0</td>
 <td>Named binding "global" for the global object.</td>
 </tr>
+
+<tr>
+<td>
+<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-html-like-comments">HTML comment syntax</td>
+<td>ES2015</td>
+<td>Full</td>
+<td>2.1.0</td>
+<td>HTML comments syntax, recognizing <code>&lt;!--</code> and <code>--&gt;</code>
+    as specified in ES2015 Annex B.1.3.</td>
 </tr>
 
 </table>
