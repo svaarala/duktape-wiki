@@ -9,6 +9,9 @@ are also listed.
 Many of the features can be disabled through config options such as
 `DUK_USE_ES6_PROXY` and `DUK_USE_BUFFEROBJECT_SUPPORT`.
 
+Duktape status is also updated for new releases in
+[kangax/compat-table](https://kangax.github.io/compat-table).
+
 ## Summary
 
 <table>
