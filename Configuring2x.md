@@ -98,6 +98,51 @@ See also:
 * You can still use `genconfig.py` as a separate tool.  However, it's
   recommended to use `configure.py` instead.
 
+## Multiversion configuration files
+
+It's possible for a `duk_config.h` header to support multiple Duktape
+versions: starting from Duktape 2.1 the config header sees `DUK_VERSION`
+which can be used to decide which options are enabled, to tweak macro and
+helper arguments, and so on.
+
+Note that the `DUK_USE_xxx` config option set may change arbitrarily between
+even minor releases (though there's of course a reasonable effort to minimize
+such changes).  The tools don't provide any direct support for maintaining
+multiversion config files beyond making DUK_VERSION visible to the header,
+so maintaining a multiversion configuration file needs careful thought.
+
+One simple approach is to use a top level #ifdef for DUK_VERSION, e.g.:
+
+```c
+#if !defined(DUK_CONFIG_H_INCLUDED)
+#define DUK_CONFIG_H_INCLUDED
+
+#if DUK_VERSION >= 20200 && DUK_VERSION < 20299
+/* The header could be inlined here if a single file duk_config.h is needed. */
+#include "duk_config_2.2.h"
+#elif DUK_VERSION >= 20100 && DUK_VERSION < 20199
+#include "duk_config.2.1.h"
+#else
+#error invalid DUK_VERSION
+#endif
+
+#endif  /* DUK_CONFIG_H_INCLUDED */
+```
+
+In other cases DUK_VERSION may only be needed to tweak a few parameters,
+e.g. disable a feature below a certain patch level.  For example, suppose
+there was a bug in JSON.stringify() fastpath which was fixed in 2.1.3 and
+you wanted a single duk_config.h to work for all Duktape 2.1.x versions:
+
+```c
+#if DUK_VERSION < 20103
+/* Avoid (hypothetical) fastpath bug before 2.1.3. */
+#undef DUK_USE_JSON_STRINGIFY_FASTPATH
+#else
+#define DUK_USE_JSON_STRINGIFY_FASTPATH
+#endif
+```
+
 ## Common options
 
 ### Fatal error handler (RECOMMENDED)
