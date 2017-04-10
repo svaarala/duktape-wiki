@@ -9,6 +9,7 @@ The table below summarizes API calls to read a value of a certain type
 <tr>
 <th>Value stack entry type</th>
 <th>duk_get_xxx()</th>
+<th>duk_get_xxx_default()</th>
 <th>duk_require_xxx()</th>
 <th>duk_opt_xxx()</th>
 <th>duk_to_xxx()</th>
@@ -17,6 +18,7 @@ The table below summarizes API calls to read a value of a certain type
 <tr>
 <td>none (index out of bounds)</td>
 <td>default (automatic)</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>default (explicit)</td>
 <td>TypeError</td>
@@ -25,6 +27,7 @@ The table below summarizes API calls to read a value of a certain type
 <tr>
 <td>undefined</td>
 <td>default (automatic)</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>default (explicit)</td>
 <td>coercion</td>
@@ -33,6 +36,7 @@ The table below summarizes API calls to read a value of a certain type
 <tr>
 <td>null</td>
 <td>default (automatic)</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>coercion</td>
@@ -44,11 +48,13 @@ The table below summarizes API calls to read a value of a certain type
 <td>as is</td>
 <td>as is</td>
 <td>as is</td>
+<td>as is</td>
 </tr>
 
 <tr>
 <td>Non-matching type</td>
 <td>default (automatic)</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>coercion</td>
@@ -62,6 +68,7 @@ Concrete example for string values:
 <tr>
 <th>Value stack entry type</th>
 <th>duk_get_string()</th>
+<th>duk_get_string_default()</th>
 <th>duk_require_string()</th>
 <th>duk_opt_string()</th>
 <th>duk_to_string()</th>
@@ -70,6 +77,7 @@ Concrete example for string values:
 <tr>
 <td>none (index out of bounds)</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>default (explicit)</td>
 <td>TypeError</td>
@@ -78,6 +86,7 @@ Concrete example for string values:
 <tr>
 <td>undefined</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>default (explicit)</td>
 <td>"undefined"</td>
@@ -86,6 +95,7 @@ Concrete example for string values:
 <tr>
 <td>null</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>"null"</td>
@@ -94,6 +104,7 @@ Concrete example for string values:
 <tr>
 <td>boolean</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>"true"</td>
@@ -102,6 +113,7 @@ Concrete example for string values:
 <tr>
 <td>number</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>"123.4"</td>
@@ -118,6 +130,7 @@ Concrete example for string values:
 <tr>
 <td>object</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>"[object Object]"</td>
@@ -126,6 +139,7 @@ Concrete example for string values:
 <tr>
 <td>buffer</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>"[object ArrayBuffer]"</td>
@@ -134,6 +148,7 @@ Concrete example for string values:
 <tr>
 <td>pointer</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>"0xdeadbeef"</td>
@@ -142,6 +157,7 @@ Concrete example for string values:
 <tr>
 <td>lightfunc</td>
 <td>NULL</td>
+<td>default (explicit)</td>
 <td>TypeError</td>
 <td>TypeError</td>
 <td>"function light_08062727_0a11() { [lightfunc code] }"</td>
