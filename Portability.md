@@ -301,7 +301,10 @@ git repository to see how Dukweb is compiled.
   it isn't as portable as C compilation.
 
 * Enable C99 mode if possible (`-std=c99` or similar).  Type detection
-  without C99 is less reliable than with C99.
+  without C99 is less reliable than with C99.  Duktape also relies on
+  (v)snprintf() which are C99/POSIX; there's a fill-in for MSVC but for
+  other non-C99 platforms you may need to define `DUK_SNPRINTF()` and
+  `DUK_VSNPRINTF()` manually in your `duk_config.h` header.
 
 * If Duktape compiles but doesn't seem to work correctly, enable
   self tests with `DUK_OPT_SELF_TESTS`.  Self tests detect some compiler
