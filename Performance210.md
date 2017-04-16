@@ -300,7 +300,7 @@ Baseline is duk.O2.210, compared to a few other engines.  Lower is better, lowes
 
 ## Duktape microbenchmarks, pruned
 
-Baselines is duk.O2.200, compared to duk.O2.210, i.e. improvement or
+Baseline is duk.O2.200, compared to duk.O2.210, i.e. improvement or
 regression from 2.0.x -> 2.1.x.  Lower is better, lowest of 5 runs.
 
 <table>
