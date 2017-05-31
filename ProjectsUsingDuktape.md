@@ -115,6 +115,10 @@
 <td>Using Duktape for scripting</td>
 </tr>
 <tr>
+<td><a href="http://www.sassafras.com/hrl/7.4/jst_reference.html" target="_blank">Sassafras K2</a></td>
+<td>Hardware and software asset management suite, using Duktape for scripting</td>
+</tr>
+<tr>
 <td><a href="https://github.com/saghul/sjs" target="_blank">Skookum JS</a></td>
 <td>A <i>skookum</i> JavaScript runtime</td>
 </tr>
