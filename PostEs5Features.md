@@ -283,6 +283,15 @@ Status of trap implementation:
 <tr><td>construct</td><td>2.2.0</td><td>Some limitations for new.target and .prototype lookup.</td></tr>
 </table>
 
+Duktape specific behavior:
+
+* Proxy key argument is not string coerced at present, e.g. `proxy[123]`
+  invokes the `.get` trap with a number (123) rather than a string ("123")
+  key argument.  Standard behavior is to string coerce the key which is
+  much slower when virtualizing indexed objects.  Future work is to change
+  the behavior to conforming, but provide some way of configuring a Proxy
+  to provide the sometimes preferred non-coercing behavior.
+
 Limitations include:
 
 * Only about half of the ES2015 traps have been implemented.  This causes odd
