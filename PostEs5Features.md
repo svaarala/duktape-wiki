@@ -236,6 +236,26 @@ Duktape status is also updated for new releases in
     as specified in ES2015 Annex B.1.3.</td>
 </tr>
 
+<tr>
+<td>
+<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-meta-properties-runtime-semantics-evaluation">new.target</td>
+<td>ES2015</td>
+<td>Full</td>
+<td>2.2.0</td>
+<td><code>new.target</code> syntax.</td>
+</tr>
+
+<tr>
+<td>
+<a href="https://tc39.github.io/ecma262/#sec-additional-properties-of-the-object.prototype-object">__defineGetter__, etc</td>
+<td>ES2017</td>
+<td>Full</td>
+<td>2.2.0</td>
+<td>Annex B <code>Object.prototype.{__defineGetter,__defineSetter__}</code>
+    and <code>Object.prototype.{__lookupGetter__,__lookupSetter__}</code>,
+    also used in a lot of legacy code.</td>
+</tr>
+
 </table>
 
 ## Proxy handlers (traps)
