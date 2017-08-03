@@ -256,6 +256,16 @@ Duktape status is also updated for new releases in
     also used in a lot of legacy code.</td>
 </tr>
 
+<tr>
+<td>
+<a href="https://www.w3.org/TR/hr-time/#dom-performance-now">performance</td>
+<td>W3C</td>
+<td>Partial</td>
+<td>2.2.0</td>
+<td>W3C High Resolution Time API <code>performance.now()</code>
+    with sub-millisecond resolution (when platform provides it).</td>
+</tr>
+
 </table>
 
 ## Proxy handlers (traps)
