@@ -266,21 +266,21 @@ Duktape implements a strict subset of the `Proxy` object from ES2015.
 Status of trap implementation:
 
 <table>
-<tr><th>Trap</th><th>Implemented</th><th>Notes</th></tr>
+<tr><th>Trap</th><th>Implemented in version</th><th>Notes</th></tr>
 <tr><td>getPrototypeOf</td><td>no</td><td></td></tr>
 <tr><td>setPrototypeOf</td><td>no</td><td></td></tr>
 <tr><td>isExtensible</td><td>no</td><td></td></tr>
 <tr><td>preventExtension</td><td>no</td><td></td></tr>
 <tr><td>getOwnPropertyDescriptor</td><td>no</td><td></td></tr>
 <tr><td>defineProperty</td><td>no</td><td></td></tr>
-<tr><td>has</td><td>yes</td><td><code>Object.hasOwnProperty()</code> does not invoke the trap at the moment, <code>key in obj</code> does.</td></tr>
-<tr><td>get</td><td>yes</td><td></td></tr>
-<tr><td>set</td><td>yes</td><td></td></tr>
-<tr><td>deleteProperty</td><td>yes</td><td></td></tr>
-<tr><td>enumerate</td><td>no (*)</td><td>The "enumerate" trap was removed in ES2016 and for-in uses "ownKeys" trap; Duktape 1.x supports "enumerate" trap in for-in.</td></tr>
-<tr><td>ownKeys</td><td>yes</td><td>Some trap result validation (non-configurable properties, non-extensible target) not yet implemented.</td></tr>
-<tr><td>apply</td><td>no</td><td></td></tr>
-<tr><td>construct</td><td>no</td><td></td></tr>
+<tr><td>has</td><td>1.0.0</td><td><code>Object.hasOwnProperty()</code> does not invoke the trap at the moment, <code>key in obj</code> does.</td></tr>
+<tr><td>get</td><td>1.0.0</td><td></td></tr>
+<tr><td>set</td><td>1.0.0</td><td></td></tr>
+<tr><td>deleteProperty</td><td>1.0.0</td><td></td></tr>
+<tr><td>enumerate</td><td>removed</td><td>The "enumerate" trap was removed in ES2016 and for-in uses "ownKeys" trap; Duktape 1.x supports "enumerate" trap in for-in.</td></tr>
+<tr><td>ownKeys</td><td>1.0.0</td><td>Some trap result validation (non-configurable properties, non-extensible target) not yet implemented.</td></tr>
+<tr><td>apply</td><td>2.2.0</td><td></td></tr>
+<tr><td>construct</td><td>2.2.0</td><td>Some limitations for new.target and .prototype lookup.</td></tr>
 </table>
 
 Limitations include:
@@ -288,11 +288,14 @@ Limitations include:
 * Only about half of the ES2015 traps have been implemented.  This causes odd
   behavior if you e.g. call `Object.defineProperty()` on a proxy object.
 
-* Proxy trap results are not validated, e.g. `ownKeys` trap result validation
+* Proxy trap results are not always validated, e.g. `ownKeys` trap result validation
   steps described in
   [[[OwnPropertyKeys]] \(\)](http://www.ecma-international.org/ecma-262/6.0/#sec-proxy-object-internal-methods-and-internal-slots-ownpropertykeys)
   for non-configurable target properties and/or non-extensible target object
   are not yet implemented.
+
+* Inheriting from Proxy objects does not always work correctly, e.g. `get` trap
+  is not invoked when reading a property from an object inheriting from a Proxy.
 
 * Proxy revocation feature of ES2015 is not supported.
 
