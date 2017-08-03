@@ -67,6 +67,10 @@
 <td>Using Duktape for reverse engineering binaries</td>
 </tr>
 <tr>
+<td><a href="https://open-cobol.sourceforge.io/faq/index.html#duktape" target="_blank">GnuCOBOL</a></td>
+<td>A free COBOL compiler</td>
+</tr>
+<tr>
 <td><a href="https://github.com/olebedev/go-duktape" target="_blank">go-duktape</a></td>
 <td>Go binding for Duktape</td>
 </tr>
@@ -137,6 +141,10 @@
 <tr>
 <td><a href="https://github.com/dbohdan/tcl-duktape" target="_blank">tcl-duktape</a></td>
 <td>Tcl bindings for Duktape</td>
+</tr>
+<tr>
+<td><a href="http://btiffin.users.sourceforge.net/up/programs.html#duktape" target="_blank">Unicon</a></td>
+<td>The Unicon programming language</td>
 </tr>
 <tr>
 <td><a href="https://github.com/zero-rp/ZUI" target="_blank">ZUI</a></td>
