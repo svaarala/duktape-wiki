@@ -59,8 +59,12 @@
 <td>Using Duktape for home automation event scripting</td>
 </tr>
 <tr>
+<td><a href="http://edbrowse.org/" target="_blank">Edbrowse</a></td>
+<td>A combination editor, browser, and mail client that is 100% text based</td>
+</tr>
+<tr>
 <td><a href="http://freewrl.sf.net" target="_blank">FreeWRL</a></td>
-<td>FreeWRL is a virtual reality browser which uses Duktape for scripting</td>
+<td>A virtual reality browser which uses Duktape for scripting</td>
 </tr>
 <tr>
 <td><a href="http://www.frida.re/" target="_blank">Frida</a></td>
