@@ -10,6 +10,10 @@
 <td>Using Duktape for scripting</td>
 </tr>
 <tr>
+<td><a href="http://blogcpp.org/" target="_blank">BlogC++</a></td>
+<td>Static blog compiler, using Duktape for scripting</td>
+</tr>
+<tr>
 <td><a href="http://contraptionmaker.com/" target="_blank">Contraption Maker</a></td>
 <td>Using Duktape for <a href="http://steamcommunity.com/workshop/browse/?appid=241240&amp;requiredtags[]=Mod" target="_blank">mods</a></td>
 </tr>
