@@ -47,4 +47,4 @@ may be used to improve performance by e.g. enabling fast paths, enabling
 See:
 
 * [performance-sensitive.rst](https://github.com/svaarala/duktape/blob/master/doc/performance-sensitive.rst)
-* [performance_sensitive.rst](https://github.com/svaarala/duktape/blob/master/config/examples/performance_sensitive.yaml)
+* [performance_sensitive.yaml](https://github.com/svaarala/duktape/blob/master/config/examples/performance_sensitive.yaml)
