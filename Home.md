@@ -70,12 +70,14 @@ Welcome to the official Duktape Wiki!
 
 ## Performance
 
+* http://duktape.org/benchmarks.html
 * [[How to optimize performance|Performance]]
 * [[Duktape 1.3.0 performance measurement|Performance130]]
 * [[Duktape 1.4.0 performance measurement|Performance140]]
 * [[Duktape 1.5.0 performance measurement|Performance150]]
 * [[Duktape 2.0.0 performance measurement|Performance200]]
 * [[Duktape 2.1.0 performance measurement|Performance210]]
+* [[Duktape 2.2.0 performance measurement|Performance220]]
 
 ## Low memory optimization
 
