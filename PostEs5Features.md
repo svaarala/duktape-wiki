@@ -266,6 +266,25 @@ Duktape status is also updated for new releases in
     with sub-millisecond resolution (when platform provides it).</td>
 </tr>
 
+<tr>
+<td>
+<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number-objects">ES2015 Number built-in</td>
+<td>ES2015</td>
+<td>Full</td>
+<td>2.3.0</td>
+<td>New Number built-in properties from ES2015, e.g. EPSILON, MAX_SAFE_INTEGER,
+    parseInt(), parseFloat().</td>
+</tr>
+
+<tr>
+<td>
+<a href="https://www.ecma-international.org/ecma-262/7.0/#sec-number-objects">ES2016 Number built-in</td>
+<td>ES2016</td>
+<td>Full</td>
+<td>2.3.0</td>
+<td>New Number built-in properties from ES2016, only MIN_SAFE_INTEGER.</td>
+</tr>
+
 </table>
 
 ## Proxy handlers (traps)
