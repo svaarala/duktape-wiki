@@ -292,8 +292,13 @@ git repository to see how Dukweb is compiled.
   arithmetic is required.  This is not technically guaranteed by ANSI C,
   but there are very few environments where this assumption does not hold.
 
-* ASCII is assumed, Duktape doesn't currently work well on e.g. EBCDIC
-  platforms.
+* IEEE behavior is assumed for <code>float</code> and <code>double</code>
+  types.  This means e.g. gcc <code>-ffast-math</code>
+  (see https://gcc.gnu.org/wiki/FloatingPointMath) is not supported.
+  Duktape also works directly with IEEE float and double memory
+  representations.
+
+* ASCII is assumed, Duktape doesn't currently work on e.g. EBCDIC platforms.
 
 ## Troubleshooting
 
