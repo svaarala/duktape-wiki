@@ -218,7 +218,7 @@ Duktape status is also updated for new releases in
 </tr>
 
 <tr>
-<td><a href="https://github.com/tc39/proposal-global">"global" binding</td>
+<td><a href="https://github.com/tc39/proposal-global">"global" binding</a></td>
 <td>TC39 proposal</td>
 <td>Full</td>
 <td>2.1.0</td>
@@ -227,8 +227,7 @@ Duktape status is also updated for new releases in
 </tr>
 
 <tr>
-<td>
-<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-html-like-comments">HTML comment syntax</td>
+<td><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-html-like-comments">HTML comment syntax</a></td>
 <td>ES2015</td>
 <td>Full</td>
 <td>2.1.0</td>
@@ -237,8 +236,7 @@ Duktape status is also updated for new releases in
 </tr>
 
 <tr>
-<td>
-<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-meta-properties-runtime-semantics-evaluation">new.target</td>
+<td><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-meta-properties-runtime-semantics-evaluation">new.target</a></td>
 <td>ES2015</td>
 <td>Full</td>
 <td>2.2.0</td>
@@ -246,8 +244,7 @@ Duktape status is also updated for new releases in
 </tr>
 
 <tr>
-<td>
-<a href="https://tc39.github.io/ecma262/#sec-additional-properties-of-the-object.prototype-object">__defineGetter__, etc</td>
+<td><a href="https://tc39.github.io/ecma262/#sec-additional-properties-of-the-object.prototype-object">__defineGetter__, etc</a></td>
 <td>ES2017</td>
 <td>Full</td>
 <td>2.2.0</td>
@@ -258,7 +255,7 @@ Duktape status is also updated for new releases in
 
 <tr>
 <td>
-<a href="https://www.w3.org/TR/hr-time/#dom-performance-now">performance</td>
+<a href="https://www.w3.org/TR/hr-time/#dom-performance-now">performance</a></td>
 <td>W3C</td>
 <td>Partial</td>
 <td>2.2.0</td>
@@ -267,22 +264,52 @@ Duktape status is also updated for new releases in
 </tr>
 
 <tr>
-<td>
-<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number-objects">ES2015 Number built-in</td>
+<td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-number-objects">ES2015 Number built-in</a></td>
 <td>ES2015</td>
 <td>Full</td>
 <td>2.3.0</td>
-<td>New Number built-in properties from ES2015, e.g. EPSILON, MAX_SAFE_INTEGER,
-    parseInt(), parseFloat().</td>
+<td>New Number built-in properties from ES2015, e.g. <code>EPSILON</code>,
+    <code>MAX_SAFE_INTEGER</code>, <code>parseInt()</code>, <code>parseFloat()</code>.</td>
 </tr>
 
 <tr>
-<td>
-<a href="https://www.ecma-international.org/ecma-262/7.0/#sec-number-objects">ES2016 Number built-in</td>
+<td><a href="https://www.ecma-international.org/ecma-262/7.0/#sec-number-objects">ES2016 Number built-in</a></td>
 <td>ES2016</td>
 <td>Full</td>
 <td>2.3.0</td>
-<td>New Number built-in properties from ES2016, only MIN_SAFE_INTEGER.</td>
+<td>New Number built-in properties from ES2016, only <code>MIN_SAFE_INTEGER</code>.</td>
+</tr>
+
+<tr>
+<td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols">@@hasInstance</a></td>
+<td>ES2015</td>
+<td>Full</td>
+<td>2.3.0</td>
+<td>@@hasInstance well-known symbol support in <code>instanceof</code>.</td>
+</tr>
+
+<tr>
+<td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols">@@toStringTag</a></td>
+<td>ES2015</td>
+<td>Full</td>
+<td>2.3.0</td>
+<td>@@toStringTag well-known symbol support in <code>Object.prototype.toString()</code>.</td>
+</tr>
+
+<tr>
+<td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols">@@toPrimitive</a></td>
+<td>ES2015</td>
+<td>Full</td>
+<td>2.3.0</td>
+<td>@@toPrimitive well-known symbol support in <code>ToPrimitive()</code>.</td>
+</tr>
+
+<tr>
+<td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols">@@isConcatSpreadable</a></td>
+<td>ES2015</td>
+<td>Full</td>
+<td>2.3.0</td>
+<td>@@isConcatSpreadable well-known symbol support in <code>Array.prototype.concat</code>.</td>
 </tr>
 
 </table>
