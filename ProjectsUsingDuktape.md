@@ -131,6 +131,10 @@
 <td>Hardware and software asset management suite, using Duktape for scripting</td>
 </tr>
 <tr>
+<td><a href="//github.com/sit-it/sit" target="_blank">SIT</a></td>
+<td>An offline-first/file-based/merge-friendly issue tracker, using Duktape to run user-defined event records reducers, producing meaningful projections of issues</td>
+</tr>
+<tr>
 <td><a href="https://github.com/saghul/sjs" target="_blank">Skookum JS</a></td>
 <td>A <i>skookum</i> JavaScript runtime</td>
 </tr>
