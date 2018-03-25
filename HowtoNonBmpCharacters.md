@@ -8,18 +8,18 @@ Ecmascript standard itself does not support non-BMP characters: all
 codepoints are strictly 16-bit.  Non-BMP characters are intended to be
 represented using surrogate pairs:
 
-- E5.1 Section 8.4: http://www.ecma-international.org/ecma-262/5.1/#sec-8.4
-- E6 Section 6.1.4: http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types-string-type
+- E5.1 Section 8.4: <http://www.ecma-international.org/ecma-262/5.1/#sec-8.4>
+- E6 Section 6.1.4: <http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types-string-type>
 
 ES2015 RegExp patterns having the `u` flag support non-BMP characters by
 interpreting the string data as UTF-16:
 
-- http://www.ecma-international.org/ecma-262/6.0/#sec-pattern-semantics
+- <http://www.ecma-international.org/ecma-262/6.0/#sec-pattern-semantics>
 
 ES2015 `String.prototype.trim()` also has special handling for non-BMP
 characters (again interpreting the string as UTF-16):
 
-- http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.trim
+- <http://www.ecma-international.org/ecma-262/6.0/#sec-string.prototype.trim>
 
 ### Duktape strings support up to 32-bit codepoints
 
@@ -28,7 +28,7 @@ arbitrary 16-bit codepoints (as required by Ecmascript) but also extended
 codepoints for the full 32-bit range.  Also arbitrary byte sequences (which
 are invalid UTF-8) are allowed:
 
-- http://duktape.org/guide.html#type-string
+- <http://duktape.org/guide.html#type-string>
 
 As a result, Duktape supports characters in the non-BMP range directly:
 

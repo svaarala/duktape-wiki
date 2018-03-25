@@ -741,7 +741,7 @@ Duktape is compiled with:
 * `gcc -O2`
 * duk.O2: defaults + debugger and executor interrupt enabled, fastints enabled
 * duk-perf.O2: performance-sensitive.yaml as baseline, no debugger or executor interrupt support, fastints enabled
-* Profile guided optimization (PGO) uses a dummy training set, https://github.com/svaarala/duktape/blob/d73b35e788660a9a7424f8bbafe8f220d8e99970/Makefile#L92-L97
+* Profile guided optimization (PGO) uses a dummy training set, <https://github.com/svaarala/duktape/blob/d73b35e788660a9a7424f8bbafe8f220d8e99970/Makefile#L92-L97>
 
 Note that:
 

@@ -7,11 +7,11 @@ performance, and redirectable output.  In Duktape 2.x that framework was moved
 into an optional extra (https://github.com/svaarala/duktape/tree/master/extras/logging)
 to avoid portability issues on exotic targets.
 
-See https://github.com/svaarala/duktape/blob/master/doc/logging.rst for details
+See <https://github.com/svaarala/duktape/blob/master/doc/logging.rst> for details
 on the features and internals of the logging framework.
 
 You can of course use any other logging framework of your choice, e.g.
-`console.log()` provided by https://github.com/svaarala/duktape/tree/master/extras/console.
+`console.log()` provided by <https://github.com/svaarala/duktape/tree/master/extras/console>.
 For low memory targets something much simpler, such as a single `print()`
 binding may be the most appropriate approach.
 

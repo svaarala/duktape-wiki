@@ -1,6 +1,6 @@
 # How to use finalization
 
-Guide documentation: http://duktape.org/guide.html#finalization.
+Guide documentation: <http://duktape.org/guide.html#finalization>.
 
 ## Simple example
 
@@ -158,4 +158,4 @@ objects to grow initially, but it must then decrease at least 25% on
 every round or the finalization process aborts.
 
 There's some discussion of heap destruction approaches in:
-https://github.com/svaarala/duktape/pull/473.
+<https://github.com/svaarala/duktape/pull/473>.

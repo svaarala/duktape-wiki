@@ -56,7 +56,7 @@ New code should use ES2015 ArrayBuffers and typed arrays (such as Uint8Array)
 unless there's a good reason for doing otherwise.  Here's one tutorial on
 getting started with typed arrays:
 
-* http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/
+* <http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/>
 
 `ArrayBuffer` encapsulates a byte buffer.  Typed array objects are views
 into an underlying `ArrayBuffer`, e.g. `Uint32Array` provides a virtual
@@ -136,7 +136,7 @@ The most likely development direction for future releases is to:
   describes the internals
 
   - A more detailed table of each object type, including object properties,
-    coercion behavior, etc: https://github.com/svaarala/duktape/blob/master/doc/buffers.rst#summary-of-buffer-related-values
+    coercion behavior, etc: <https://github.com/svaarala/duktape/blob/master/doc/buffers.rst#summary-of-buffer-related-values>
 
 ## API summary
 
@@ -861,7 +861,7 @@ if (duk_get_type(ctx, idx_mybuffer) == DUK_TYPE_BUFFER) {
 
 Here's a test case with some basic usage:
 
-* https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-example-1.c
+* <https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-example-1.c>
 
 #### Creating buffer objects
 
@@ -1208,7 +1208,7 @@ provide very clean behavior (some operations return zero, others may throw
 a TypeError, etc) but the behavior is guaranteed to be memory safe.  This
 situation is illustrated (and tested for) in the following test case:
 
-* https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-dynamic-safety.c
+* <https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-dynamic-safety.c>
 
 C code interacting with buffers through property reads/writes is guaranteed
 to be memory safe.  C code may fetch a pointer and a length to an underlying

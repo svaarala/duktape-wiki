@@ -7,9 +7,9 @@ used directly with no special development setup other than including Duktape
 source and headers into the application build.  There are pre-built dist
 packages for:
 
-* Official releases: http://duktape.org/download.html
+* Official releases: <http://duktape.org/download.html>
 
-* Snapshots from master: http://duktape.org/snapshots/
+* Snapshots from master: <http://duktape.org/snapshots/>
 
 In some cases modifications to Duktape internals are needed; for example, a
 private fork of Duktape may be used for a certain target.  It may then be
@@ -23,7 +23,7 @@ Windows, OS X) and using the Duktape top level `Makefile` (Linux only).
 
 The minimum requirements for creating a dist package are:
 
-* A checkout of https://github.com/svaarala/duktape or a fork; a plain
+* A checkout of <https://github.com/svaarala/duktape> or a fork; a plain
   non-versioned directory also works.
 
 * Python 2 with PyYAML, needed for the dist tools.
@@ -158,7 +158,7 @@ $ sudo pacman -S --needed base-devel clang llvm git bc
 
 Based on:
 
-* https://github.com/svaarala/duktape/issues/466
+* <https://github.com/svaarala/duktape/issues/466>
 
 ### Windows
 

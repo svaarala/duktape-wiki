@@ -69,7 +69,7 @@ up Ecmascript algorithms.  More specifically, our test program searches for
 primes under 1000000 which end with the digits '9999'.  The Ecmascript
 version of the program is:
 
-* https://github.com/svaarala/duktape/blob/master/examples/guide/prime.js
+* <https://github.com/svaarala/duktape/blob/master/examples/guide/prime.js>
 
 Note that the program uses the native helper if it's available but falls
 back to an Ecmascript version if it's not.  This allows the Ecmascript code
@@ -84,7 +84,7 @@ A native helper with functionality equivalent to `primeCheckEcmascript()`
 is quite straightforward to implement.  Adding a program main and a simple
 `print()` binding into the Ecmascript global object, we get `primecheck.c`:
 
-* https://github.com/svaarala/duktape/blob/master/examples/guide/primecheck.c
+* <https://github.com/svaarala/duktape/blob/master/examples/guide/primecheck.c>
 
 The new calls compared to
 [[Getting started: line processing|GettingStartedLineProcessing]]

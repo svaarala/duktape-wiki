@@ -37,7 +37,7 @@ In this particular case the performance improvement is almost 20%.
 
 See:
 
-* https://github.com/svaarala/duktape/blob/master/doc/performance-sensitive.rst
+* <https://github.com/svaarala/duktape/blob/master/doc/performance-sensitive.rst>
 
 ## Duktape performance characteristics
 

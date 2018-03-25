@@ -13,13 +13,13 @@ The script code will be placed in
 The example line processing function converts a plain text line into HTML,
 and automatically bolds text between stars:
 
-* https://github.com/svaarala/duktape/blob/master/examples/guide/process.js
+* <https://github.com/svaarala/duktape/blob/master/examples/guide/process.js>
 
 The C code, [processlines.c](https://github.com/svaarala/duktape/blob/master/examples/guide/processlines.c)
 initializes a Duktape context, evaluates the script, then proceeds to process
 lines from `stdin`, calling `processLine()` for every line:
 
-* https://github.com/svaarala/duktape/blob/master/examples/guide/processlines.c
+* <https://github.com/svaarala/duktape/blob/master/examples/guide/processlines.c>
 
 ## Breakdown of processlines.c
 
