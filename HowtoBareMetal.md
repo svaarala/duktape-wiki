@@ -15,7 +15,7 @@ replaced with custom providers.
 This document discusses the usual issues in compiling and running Duktape on
 a bare metal target.  See also:
 
-* https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst
+* <https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst>
 
 ## Footprint expectations
 
@@ -30,10 +30,10 @@ run (very minimally) with 32kB RAM.
   disabled to avoid related large libc code.  Custom Date provider.
 
 * A minimal s(n)printf() and sscanf() replacement to avoid large libc
-  implementations: https://github.com/svaarala/duktape/tree/master/extras/minimal-printf.
+  implementations: <https://github.com/svaarala/duktape/tree/master/extras/minimal-printf>.
 
 * A simple pool allocator:
-  https://github.com/svaarala/duktape/tree/master/extras/alloc-pool.
+  <https://github.com/svaarala/duktape/tree/master/extras/alloc-pool>.
 
 * `setjmp()`, `longjmp()`, and various odds and ends provided by a third party
   libc implementation.
@@ -54,7 +54,7 @@ built-in bindings:
 ### Configuration and duk_config.h
 
 * Use `tools/configure.py` to create a custom configuration.  The low memory
-  configuration in https://github.com/svaarala/duktape/blob/master/config/examples/low_memory.yaml
+  configuration in <https://github.com/svaarala/duktape/blob/master/config/examples/low_memory.yaml>
   is a reasonable starting point.
 
 * Use the YAML config format to provide custom tweaks to Duktape configuration.
@@ -81,9 +81,9 @@ built-in bindings:
 
 * The Date built-in very often needs to be replaced, see:
 
-  - https://github.com/svaarala/duktape/blob/master/doc/datetime.rst#implementing-an-external-date-provider
+  - <https://github.com/svaarala/duktape/blob/master/doc/datetime.rst#implementing-an-external-date-provider>
 
-  - https://github.com/svaarala/duktape/tree/master/examples/dummy-date-provider
+  - <https://github.com/svaarala/duktape/tree/master/examples/dummy-date-provider>
 
 * If RAM is very tight, the "ROM built-ins" option allows built-in binding
   objects (e.g. `Math`, `Math.cos`, `Array`) to be compiled into the read-only
@@ -97,7 +97,7 @@ This is obviously compiler specific, but it's important to use options that
 minimize footprint, remove any unused functions in final linking, etc.  See
 for example:
 
-* https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst#optimizing-code-footprint
+* <https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst#optimizing-code-footprint>
 
 Enabling "execute in place" is often necessary to allow code to run directly
 from flash.

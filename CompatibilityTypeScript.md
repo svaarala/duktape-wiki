@@ -12,6 +12,6 @@ Since Duktape 1.5.0 no regexp fixes are necessary; prior to Duktape
 
 See:
 
-- https://github.com/svaarala/duktape/issues/523#issuecomment-172391196
+- <https://github.com/svaarala/duktape/issues/523#issuecomment-172391196>
 
-- https://github.com/AtomicGameEngine/AtomicGameEngine/pull/614
+- <https://github.com/AtomicGameEngine/AtomicGameEngine/pull/614>

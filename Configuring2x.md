@@ -74,14 +74,14 @@ $ python tools/configure.py \
 
 See also:
 
-* https://github.com/svaarala/duktape/tree/master/doc/duk-config.rst:
+* <https://github.com/svaarala/duktape/tree/master/doc/duk-config.rst>:
   detailed documentation of using configure.py (genconfig.py in Duktape
   1.x) with examples.
 
-* https://github.com/svaarala/duktape/tree/master/config/config-options:
+* <https://github.com/svaarala/duktape/tree/master/config/config-options>:
   metadata for available config options.
 
-* https://github.com/svaarala/duktape/blob/master/src/builtins.yaml:
+* <https://github.com/svaarala/duktape/blob/master/src-input/builtins.yaml>:
   built-in object metadata, and a description of how to write metadata
   files to edit built-in objects or add new built-in bindings.
 

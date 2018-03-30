@@ -79,13 +79,13 @@ The three kinds of buffer values have similarities and differences:
 Here's a more detailed table of each object type, including object properties,
 coercion behavior, etc:
 
-* https://github.com/svaarala/duktape/blob/master/doc/buffers.rst#summary-of-buffer-related-values
+* <https://github.com/svaarala/duktape/blob/master/doc/buffers.rst#summary-of-buffer-related-values>
 
 Because Khronos/ES2015 typed arrays is the best standard for buffers, that should
 be the preferred choice for new code.  Here's a good tutorial on getting started
 with typed arrays:
 
-* http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/
+* <http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/>
 
 ## Useful references
 
@@ -261,7 +261,7 @@ To summarize, the main differences between a plain buffer and a
 Typed arrays are used in Ecmascript code like with other engines, see
 e.g. the following tutorial:
 
-* http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/
+* <http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/>
 
 There are some custom behaviors discussed later in this document.
 
@@ -269,7 +269,7 @@ There are some custom behaviors discussed later in this document.
 
 Node.js Buffers are used like with Node.js/V8, see e.g.:
 
-* https://nodejs.org/api/buffer.html
+* <https://nodejs.org/api/buffer.html>
 
 There are some custom behaviors discussed later in this document.
 
@@ -476,7 +476,7 @@ somewhat tentative, and may undergo slight changes in Duktape 1.4.
 
 Here's a test case with some basic usage:
 
-* https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-example-1.c
+* <https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-example-1.c>
 
 #### Creating buffer objects
 
@@ -544,7 +544,7 @@ There's currently no explicit type check API call for checking whether a value
 is a buffer object or not.  This is also the case for `String` objects: they
 type check as `DUK_TYPE_OBJECT` instead of `DUK_TYPE_STRING` and there's no
 other primitive to check their type.  Changing this behavior is tracked by:
-https://github.com/svaarala/duktape/issues/167.
+<https://github.com/svaarala/duktape/issues/167>.
 
 In practice this is not a big issue: you can simply call
 `duk_require_buffer_data()` to get a data pointer and length.  The call will
@@ -1003,7 +1003,7 @@ provide very clean behavior (some operations return zero, others may throw
 a TypeError, etc) but the behavior is guaranteed to be memory safe.  This
 situation is illustrated (and tested for) in the following test case:
 
-* https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-dynamic-safety.c
+* <https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-dynamic-safety.c>
 
 C code interacting with buffers through property reads/writes is guaranteed
 to be memory safe.  C code may fetch a pointer and a length to an underlying

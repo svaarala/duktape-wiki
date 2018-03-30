@@ -338,9 +338,9 @@ Duktape doesn't currently provide wrappers for format specifier defines.
 The `printf()` and `scanf()` format specifiers may be different.  One reason
 is that `float` arguments are automatically promoted to `double` in `printf()`
 but they are handled as distinct types by `scanf()`.  See
-http://stackoverflow.com/questions/210590/why-does-scanf-need-lf-for-doubles-when-printf-is-okay-with-just-f.
+<http://stackoverflow.com/questions/210590/why-does-scanf-need-lf-for-doubles-when-printf-is-okay-with-just-f>.
 
 The correct format specifier for a `double` in `printf()` is `%f` (float
 values are automatically promoted to doubles) but `%lf` is also accepted.
 The latter is used in Duktape examples for clarity.  See
-http://stackoverflow.com/questions/4264127/correct-format-specifier-for-double-in-printf.
+<http://stackoverflow.com/questions/4264127/correct-format-specifier-for-double-in-printf>.

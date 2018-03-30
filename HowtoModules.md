@@ -11,7 +11,7 @@ also works in Duktape 1.x).  You can also implement a custom module loader from
 scratch.
 
 For Duktape 2.x remember to initialize the `module-duktape` extra before using
-module loading, see: https://github.com/svaarala/duktape/tree/master/extras/module-duktape/README.rst.
+module loading, see: <https://github.com/svaarala/duktape/tree/master/extras/module-duktape/README.rst>.
 
 You can load modules from Ecmascript code with the global `require()` function:
 

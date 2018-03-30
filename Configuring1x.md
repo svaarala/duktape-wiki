@@ -38,7 +38,7 @@ for build:
   ```
 
   There are several alternatives to defining option overrides, see:
-  https://github.com/svaarala/duktape/blob/master/doc/duk-config.rst#genconfig-option-overrides
+  <https://github.com/svaarala/duktape/blob/master/doc/duk-config.rst#genconfig-option-overrides>
 
 * Edit `duk_config.h` manually.  This is a bit messy but allows everything
   to be modified, e.g. typedefs and `#include` directives.
@@ -63,7 +63,7 @@ In Duktape 1.2 Duktape features are configured through feature options:
   ```
 
   For available feature options, see:
-  https://github.com/svaarala/duktape/blob/master/doc/feature-options.rst
+  <https://github.com/svaarala/duktape/blob/master/doc/feature-options.rst>
 
 * When compiling Duktape as a Windows DLL, you must define `DUK_OPT_DLL_BUILD`
   for both Duktape and application build.  For example:

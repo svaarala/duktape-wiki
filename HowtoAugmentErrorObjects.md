@@ -6,7 +6,7 @@ Error objects have both "own" properties and properties inherited from
 `Error.prototype`; some properties are normal data properties while
 others are virtual, see:
 
-- http://duktape.org/guide.html#errorobjects
+- <http://duktape.org/guide.html#errorobjects>
 
 ## Overwriting .fileName, .lineNumber, and .stack
 
@@ -78,4 +78,4 @@ duk_def_prop(ctx, idx_err, DUK_DEFPROP_HAVE_VALUE |
 
 There's a polyfill to provide Duktape 1.4.0 behavior for previous versions:
 
-* https://github.com/svaarala/duktape/blob/master/polyfills/duktape-error-setter-writable.js
+* <https://github.com/svaarala/duktape/blob/master/polyfills/duktape-error-setter-writable.js>

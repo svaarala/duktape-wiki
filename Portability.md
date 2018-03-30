@@ -294,7 +294,7 @@ git repository to see how Dukweb is compiled.
 
 * IEEE behavior is assumed for <code>float</code> and <code>double</code>
   types.  This means e.g. gcc <code>-ffast-math</code>
-  (see https://gcc.gnu.org/wiki/FloatingPointMath) is not supported.
+  (see <https://gcc.gnu.org/wiki/FloatingPointMath) is not supported.
   Duktape also works directly with IEEE float and double memory
   representations.
 
@@ -337,7 +337,7 @@ git repository to see how Dukweb is compiled.
   [datetime.rst](https://github.com/svaarala/duktape/blob/master/doc/datetime.rst).
 
 * Some exotic platforms have broken double-to-integer or integer-to-double
-  casts, which causes e.g. https://github.com/svaarala/duktape/issues/336.
+  casts, which causes e.g. <https://github.com/svaarala/duktape/issues/336>.
   At the moment there's no easy workaround because casts are used inside
   Duktape in several places.  A possible future fix is to use macros for such
   casts, so that you can fix the casts in a platform dependent manner and edit

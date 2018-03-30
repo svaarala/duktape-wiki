@@ -43,9 +43,9 @@ function.
 You can store references in Duktape's "stash" objects.  They are similar to
 the global object but are not (easily) reachable from Ecmascript code:
 
-- http://duktape.org/api.html#duk_push_heap_stash
-- http://duktape.org/api.html#duk_push_global_stash
-- http://duktape.org/api.html#duk_push_thread_stash
+- <http://duktape.org/api.html#duk_push_heap_stash>
+- <http://duktape.org/api.html#duk_push_global_stash>
+- <http://duktape.org/api.html#duk_push_thread_stash>
 
 ### Any reachable object
 

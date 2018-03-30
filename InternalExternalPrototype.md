@@ -16,9 +16,9 @@ See also:
 
 * [[How to write a native constructor function|HowtoNativeConstructor]]
 
-* https://developer.mozilla.org/en/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+* <https://developer.mozilla.org/en/docs/Web/JavaScript/Inheritance_and_the_prototype_chain>
 
-* http://stackoverflow.com/questions/383201/relation-between-prototype-and-prototype-in-javascript
+* <http://stackoverflow.com/questions/383201/relation-between-prototype-and-prototype-in-javascript>
 
 ## Internal prototype
 
@@ -26,7 +26,7 @@ The internal prototype, also referred to simply as "prototype", is
 specified as the internal property `[[Prototype]]` in the Ecmascript
 specification:
 
-* http://www.ecma-international.org/ecma-262/5.1/#sec-8.6.2
+* <http://www.ecma-international.org/ecma-262/5.1/#sec-8.6.2>
 
 It affects actual property lookups such as `obj.prop`.  To simplify a bit, a
 property lookup:
@@ -83,7 +83,7 @@ var obj = new MyConstructor();
 ```
 
 When the constructor call happens (see
-http://www.ecma-international.org/ecma-262/5.1/#sec-13.2.2 for details):
+<http://www.ecma-international.org/ecma-262/5.1/#sec-13.2.2> for details):
 
 * Duktape will create a new empty object (the "default instance") whose
   internal prototype is initialized to the current value of the constructor's
