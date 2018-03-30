@@ -58,7 +58,8 @@ def convert(fn):
             link = link + '>'
         return link + tail
 
-    # Take care of Gollum-supported links first.
+    # Take care of Gollum-supported links first, converting them to .md links.
+    # (These should no longer occur in the repo, so a no-op.)
     data = re.sub(re_wikilink1, _repl1, data)
 
     # Then change (or insert) link suffix .html.
