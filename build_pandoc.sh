@@ -63,6 +63,7 @@ for fn in /tmp/wiki-rebuild-tmp/duktape-wiki/*.rst; do
     pandoc -r rst --highlight-style haddock -w html5 \
         --css style-top.css \
         --css github-pandoc-adapted.css \
+        --css style-fixups.css \
         --include-in-header in_header.html \
         --include-before-body before_body.html \
         --include-after-body after_body.html \

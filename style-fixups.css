@@ -1,0 +1,20 @@
+/* Redefine this rule to get header line-height correct after github-pandoc
+ * CSS.
+ */
+#site-top-nav ul {
+	display: inline;
+	vertical-align: bottom;
+	line-height: 24pt;
+	margin: 0;
+	border: 0;
+	padding: 0;
+
+	/* 'line-height' in this element is sized using logo font inherited
+	 * from #site-top.  The margins in #site-top-nav are sized using the
+	 * navigation font which needs to be set here (in the parent) for that
+	 * to be possible.
+	 */
+	font-family: 'Droid Sans Mono', sans-serif;
+	font-size: 18pt;
+	font-weight: 400;
+}
