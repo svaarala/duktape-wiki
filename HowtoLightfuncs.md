@@ -48,7 +48,7 @@ limitations, with the most important being:
   used as constructors, but the default instance created will always inherit
   from Object.prototype.  The native function can overwrite the prototype
   explicitly, or return a "replacement value".  See
-  [[How to write a native constructor function|HowtoNativeConstructor]].
+  [How to write a native constructor function](HowtoNativeConstructor.md).
 
 Example of a lightfunc name:
 

@@ -1,6 +1,6 @@
 # Getting started: primality testing
 
-The [[Getting started: line processing|GettingStartedLineProcessing]] example
+The [Getting started: line processing](GettingStartedLineProcessing.md) example
 illustrated how C code can call into Ecmascript to do things that are easy
 in Ecmascript but difficult in C.
 
@@ -87,7 +87,7 @@ is quite straightforward to implement.  Adding a program main and a simple
 * <https://github.com/svaarala/duktape/blob/master/examples/guide/primecheck.c>
 
 The new calls compared to
-[[Getting started: line processing|GettingStartedLineProcessing]]
+[Getting started: line processing](GettingStartedLineProcessing.md)
 are, line by line:
 
 ```c

@@ -2,11 +2,11 @@
 
 ## Duktape 2.x
 
-See [[Configuring Duktape 2.x for build|Configuring2x]].
+See [Configuring Duktape 2.x for build](Configuring2x.md).
 
 ## Duktape 1.x
 
-See [[Configuring Duktape 1.x for build|Configuring1x]].
+See [Configuring Duktape 1.x for build](Configuring1x.md).
 
 ## Options for specific environments
 

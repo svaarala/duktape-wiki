@@ -14,7 +14,7 @@ in Duktape documentation for clarity.
 
 See also:
 
-* [[How to write a native constructor function|HowtoNativeConstructor]]
+* [How to write a native constructor function](HowtoNativeConstructor.md)
 
 * <https://developer.mozilla.org/en/docs/Web/JavaScript/Inheritance_and_the_prototype_chain>
 
@@ -181,4 +181,4 @@ instance will inherit from `Object.prototype` unless you:
 
 * Editi the internal prototype of an instance after its creation.
 
-See: [[How to write a native constructor function|HowtoNativeConstructor]].
+See: [How to write a native constructor function](HowtoNativeConstructor.md).
