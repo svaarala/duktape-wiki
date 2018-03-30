@@ -1,6 +1,11 @@
 STATIC_SITE=/srv/duktape-wiki
+MARKUP=markdown  # commonmark
 
 set -e  # exit on error
+
+if [ ! -d $STATIC_SITE ]; then
+    echo "Invalid static site: $STATIC_SITE"
+fi
 
 cd /tmp
 rm -rf wiki-rebuild-tmp
@@ -42,9 +47,10 @@ for fn in /tmp/wiki-rebuild-tmp/duktape-wiki/*.md; do
     # --toc ?
     # --title ?
     echo $fn
-    pandoc -r commonmark --highlight-style haddock -w html5 \
+    pandoc -r $MARKUP --highlight-style haddock -w html5 \
         --css style-top.css \
         --css github-pandoc-adapted.css \
+        --include-in-header in_header.html \
         --include-before-body before_body.html \
         --include-after-body after_body.html \
         -o "${fn%%.md}.html" "$fn"
@@ -57,6 +63,7 @@ for fn in /tmp/wiki-rebuild-tmp/duktape-wiki/*.rst; do
     pandoc -r rst --highlight-style haddock -w html5 \
         --css style-top.css \
         --css github-pandoc-adapted.css \
+        --include-in-header in_header.html \
         --include-before-body before_body.html \
         --include-after-body after_body.html \
         -o "${fn%%.rst}.html" "$fn"
@@ -65,3 +72,10 @@ done
 cp /tmp/wiki-rebuild-tmp/duktape-wiki/*.html /tmp/wiki-output-tmp/
 cp /tmp/wiki-rebuild-tmp/duktape/website/style-top.css /tmp/wiki-output-tmp/
 cp /tmp/wiki-rebuild-tmp/duktape-wiki/github-pandoc-adapted.css /tmp/wiki-output-tmp/
+
+# Copy final site on success to statically served site
+if [ ! -d $STATIC_SITE ]; then
+    echo "Invalid static site: $STATIC_SITE"
+fi
+rm -rf $STATIC_SITE/*
+cp -r /tmp/wiki-output-tmp/* $STATIC_SITE/

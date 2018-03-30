@@ -21,63 +21,63 @@ Welcome to the official Duktape Wiki!
 
 ## Getting started
 
-* [[Getting started: line processing|GettingStartedLineProcessing]]
-* [[Getting started: primality testing|GettingStartedPrimalityTesting]]
+* [Getting started: line processing](GettingStartedLineProcessing.md)
+* [Getting started: primality testing](GettingStartedPrimalityTesting.md)
 
 ## How-To
 
-* [[How to handle fatal errors|HowtoFatalErrors]]
-* [[How to work with value stack types|HowtoValueStackTypes]]
-* [[How to make function calls|HowtoFunctionCalls]]
-* [[How to use virtual properties|HowtoVirtualProperties]]
-* [[How to use finalization|HowtoFinalization]]
-* [[How to work with buffers|HowtoBuffers]] ([[Duktape 1.x|HowtoBuffers1x]] [[Duktape 2.x|HowtoBuffers2x]])
-* [[How to work with lightfuncs|HowtoLightfuncs]]
-* [[How to use modules|HowtoModules]]
-* [[How to use coroutines|HowtoCoroutines]]
-* [[How to use logging|HowtoLogging]]
-* [[How to persist object references in native code|HowtoNativePersistentReferences]]
-* [[How to write a native constructor function|HowtoNativeConstructor]]
-* [[How to iterate over an array|HowtoIterateArray]]
-* [[How to augment error objects|HowtoAugmentErrorObjects]]
-* [[How to decode Duktape bytecode|HowtoDecodeBytecode]]
-* [[How to work with non-BMP characters|HowtoNonBmpCharacters]]
-* [[How to get a reference to the global object|HowtoGlobalObjectReference]]
-* [[How to run on bare metal platforms|HowtoBareMetal]]
-* [[How to enable debug prints|HowtoDebugPrints]]
+* [How to handle fatal errors](HowtoFatalErrors.md)
+* [How to work with value stack types](HowtoValueStackTypes.md)
+* [How to make function calls](HowtoFunctionCalls.md)
+* [How to use virtual properties](HowtoVirtualProperties.md)
+* [How to use finalization](HowtoFinalization.md)
+* [How to work with buffers](HowtoBuffers.md) ([Duktape 1.x](HowtoBuffers1x.md), [Duktape 2.x](HowtoBuffers2x.md))
+* [How to work with lightfuncs](HowtoLightfuncs.md)
+* [How to use modules](HowtoModules.md)
+* [How to use coroutines](HowtoCoroutines.md)
+* [How to use logging](HowtoLogging.md)
+* [How to persist object references in native code](HowtoNativePersistentReferences.md)
+* [How to write a native constructor function](HowtoNativeConstructor.md)
+* [How to iterate over an array](HowtoIterateArray.md)
+* [How to augment error objects](HowtoAugmentErrorObjects.md)
+* [How to decode Duktape bytecode](HowtoDecodeBytecode.md)
+* [How to work with non-BMP characters](HowtoNonBmpCharacters.md)
+* [How to get a reference to the global object](HowtoGlobalObjectReference.md)
+* [How to run on bare metal platforms](HowtoBareMetal.md)
+* [How to enable debug prints](HowtoDebugPrints.md)
 
 ## Frequently asked questions
 
-* [[Development setup for developing Duktape|DevelopmentSetup]]
-* [[Internal and external prototype|InternalExternalPrototype]]
-* [[API C types|ApiCTypes]]
-* [[Post-ES5 features|PostEs5Features]]
+* [Development setup for developing Duktape](DevelopmentSetup.md)
+* [Internal and external prototype](InternalExternalPrototype.md)
+* [API C types](ApiCTypes.md)
+* [Post-ES5 features](PostEs5Features.md)
 
 ## Config and feature options
 
-* [[Configuring Duktape for build|Configuring]]
-* [[Feature options|FeatureOptions]] (DUK_OPT_xxx) used as compiler command line options (up to Duktape 1.3)
-* [[Config options|ConfigOptions]] (DUK_USE_xxx) used in [duk_config.h](https://github.com/svaarala/duktape/blob/master/doc/duk-config.rst)
+* [Configuring Duktape for build](Configuring.md)
+* [Config options](ConfigOptions.md) (DUK_USE_xxx) used in [duk_config.h](https://github.com/svaarala/duktape/blob/master/doc/duk-config.rst)
+* Feature options (DUK_OPT_XXX) used as compiler command line options (up to Duktape 1.3), see https://github.com/svaarala/duktape/tree/master/config/feature-options
 
 ## Portability and compatibility
 
-* [[Portability|Portability]] notes for various compilers and target, compilation and troubleshooting tips
+* [Portability](Portability.md) notes for various compilers and target, compilation and troubleshooting tips
 * platforms
 * architectures
 * compilers
 * standard libraries: musl, uclibc
-* [[Compatibility with TypeScript|CompatibilityTypeScript]]
+* [Compatibility with TypeScript](CompatibilityTypeScript.md)
 
 ## Performance
 
 * <http://duktape.org/benchmarks.html>
-* [[How to optimize performance|Performance]]
-* [[Duktape 1.3.0 performance measurement|Performance130]]
-* [[Duktape 1.4.0 performance measurement|Performance140]]
-* [[Duktape 1.5.0 performance measurement|Performance150]]
-* [[Duktape 2.0.0 performance measurement|Performance200]]
-* [[Duktape 2.1.0 performance measurement|Performance210]]
-* [[Duktape 2.2.0 performance measurement|Performance220]]
+* [How to optimize performance](Performance.md)
+* [Duktape 1.3.0 performance measurement](Performance130.md)
+* [Duktape 1.4.0 performance measurement](Performance140.md)
+* [Duktape 1.5.0 performance measurement](Performance150.md)
+* [Duktape 2.0.0 performance measurement](Performance200.md)
+* [Duktape 2.1.0 performance measurement](Performance210.md)
+* [Duktape 2.2.0 performance measurement](Performance220.md)
 
 ## Low memory optimization
 
@@ -87,8 +87,8 @@ Welcome to the official Duktape Wiki!
 
 ## Miscellaneous
 
-* [[Projects using Duktape|ProjectsUsingDuktape]]
-* [[Debug clients|DebugClients]]
+* [Projects using Duktape](ProjectsUsingDuktape.md)
+* [Debug clients](DebugClients.md)
 
 ## Contributing, copyright, and license
 

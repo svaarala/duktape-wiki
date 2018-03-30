@@ -14,7 +14,7 @@ matters a bit:
   return value.  The "this" binding is initialized to a "default instance"
   and the return value has special handling, allowing the default instance to
   be replaced.  See
-  [[Internal and external prototype|InternalExternalPrototype]].
+  [Internal and external prototype](InternalExternalPrototype.md).
 
 The C API provides protected and unprotected variants.  Their difference is
 that protected calls catch errors; an error is indicated by the C API call
