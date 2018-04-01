@@ -45,6 +45,7 @@ Welcome to the official Duktape Wiki!
 * [How to get a reference to the global object](HowtoGlobalObjectReference.md)
 * [How to run on bare metal platforms](HowtoBareMetal.md)
 * [How to enable debug prints](HowtoDebugPrints.md)
+* [How to configure your editor for Duktape](HowtoEditorConfiguration.md)
 
 ## Frequently asked questions
 
