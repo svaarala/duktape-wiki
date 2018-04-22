@@ -103,10 +103,6 @@
 <td>Using Duktape for main program logic</td>
 </tr>
 <tr>
-<td><a href="http://forums.spheredev.org/index.php/topic,1215.0.html" target="_blank">minisphere</a></td>
-<td>Using Duktape for game coding, debugger integration, <a href="https://github.com/fatcerberus/minisphere" target="_blank">git repo</a></td>
-</tr>
-<tr>
 <td><a href="https://movian.tv/" target="_blank">Movian</a></td>
 <td>Media center, using Duktape for plugins</td>
 </tr>
