@@ -1,6 +1,6 @@
 # How to iterate over an array
 
-## Ecmascript code
+## ECMAScript code
 
 The fastest way to iterate over an array is:
 

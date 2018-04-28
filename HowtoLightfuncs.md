@@ -5,7 +5,7 @@
 When a normal native function is created using `duk_push_c_function()` two
 heap allocations are needed:
 
-* A Function object is created to represent the function in Ecmascript code.
+* A Function object is created to represent the function in ECMAScript code.
   The function is represented by an internal `duk_hnatfunc` structure which
   is a subtype of the generic `duk_hobject` structure:
 
@@ -13,7 +13,7 @@ heap allocations are needed:
     allocated separately.
 
   - The `duk_hnatfunc` part of the structure points to the Duktape/C function
-    to be called when Ecmascript code invokes the function, and stores various
+    to be called when ECMAScript code invokes the function, and stores various
     function parameters like the argument count and a "magic" value.
 
 * A property table is allocated to hold e.g. the `.length` property.  Built-in
@@ -77,7 +77,7 @@ field can be ignored and set to zero if the native function doesn't need it.
 
 ## Making built-in functions lightfuncs
 
-The Ecmascript built-in functions `Math.cos`, `Array.prototype.join`, etc
+The ECMAScript built-in functions `Math.cos`, `Array.prototype.join`, etc
 are all by default ordinary Function objects and consume a significant
 amount of memory (more than 20kB on a 32-bit low memory target).
 

@@ -182,7 +182,7 @@ for portable formatting/scanning.
 <td>unsigned long</td>
 <td>%lu<br />unsigned long</td>
 <td>%lu<br />unsigned long</td>
-<td>Ecmascript array index</td>
+<td>ECMAScript array index</td>
 </tr>
 <tr>
 <td>duk_codepoint_t</td>

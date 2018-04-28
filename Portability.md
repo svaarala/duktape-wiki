@@ -249,7 +249,7 @@ Compilation with `/Wall` is not clean at the moment.
 ### TCC
 
 TCC has zero sign handling issues; Duktape mostly works but zero sign is
-not handled correctly.  This results in Ecmascript non-compliance, for
+not handled correctly.  This results in ECMAScript non-compliance, for
 instance `1/-0` evaluates to `Infinity`, not `-Infinity` as it should.
 
 ### VBCC (AmigaOS / TOS)

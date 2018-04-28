@@ -47,7 +47,7 @@ Duktape status is also updated for new releases in
 <td>Full</td>
 <td>1.0.0</td>
 <td><code>Object.setPrototypeOf()</code> allows user to set the internal
-    prototype of an object which is not supported in Ecmascript E5.</td>
+    prototype of an object which is not supported in ECMAScript E5.</td>
 </tr>
 
 <tr>
@@ -161,7 +161,7 @@ Duktape status is also updated for new releases in
 <td>ES2015</td>
 <td>Partial</td>
 <td>2.0.0</td>
-<td>Provides access to several fundamental Ecmascript primitives as function
+<td>Provides access to several fundamental ECMAScript primitives as function
     calls.  For example, <code>Reflect.construct()</code> behaves like
     <code>new</code>.  Currently has some limitations, e.g. explicit
     <code>newTarget</code> is not supported in <code>Reflect.construct()</code>.</td>
@@ -316,7 +316,7 @@ Duktape status is also updated for new releases in
 
 ## Proxy handlers (traps)
 
-The Ecmascript ES2015 `Proxy` object allows property virtualization
+The ECMAScript ES2015 `Proxy` object allows property virtualization
 and fine-grained access control for accessing an underlying plain object.
 Duktape implements a strict subset of the `Proxy` object from ES2015.
 Status of trap implementation:

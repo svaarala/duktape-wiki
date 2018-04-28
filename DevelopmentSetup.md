@@ -33,7 +33,7 @@ The following are optional but useful:
 * Git command line tools used to get "git describe" and other version
   metadata.
 
-* Duktape 1.x: a minifier (Closure or UglifyJS2) for some Ecmascript code
+* Duktape 1.x: a minifier (Closure or UglifyJS2) for some ECMAScript code
   embedded in the build.  This dependency was removed in Duktape 2.x.
 
 After making changes to Duktape sources, metadata, etc:
@@ -56,7 +56,7 @@ dist package such as `duktape-1.4.0.tar.xz`.  Some notes:
   directory as long as you give the git version metadata as command line
   options.
 
-* The optional minifier is used in Duktape 1.x for a very small Ecmascript
+* The optional minifier is used in Duktape 1.x for a very small ECMAScript
   initialization script (`src/duk_initjs.js`) embedded into the Duktape build.
   If you don't provide a minifier using `--minify` the script won't be
   minified.  The impact on footprint is very small, around 500 bytes.
@@ -101,7 +101,7 @@ the Makefile are:
     # to setup Emscripten fastcomp manually, see doc/emscripten-status.rst
     # for step-by-step instructions.
 
-    # Run Ecmascript and API testcases, and some other tests
+    # Run ECMAScript and API testcases, and some other tests
     $ make ecmatest
     $ make apitest
     $ make regfuzztest

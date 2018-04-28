@@ -1,6 +1,6 @@
 # Internal and external prototype
 
-Ecmascript has two different prototype concepts which can be confusing:
+ECMAScript has two different prototype concepts which can be confusing:
 
 * Internal prototype: present for all objects, controls actual property and
   method lookups.
@@ -23,7 +23,7 @@ See also:
 ## Internal prototype
 
 The internal prototype, also referred to simply as "prototype", is
-specified as the internal property `[[Prototype]]` in the Ecmascript
+specified as the internal property `[[Prototype]]` in the ECMAScript
 specification:
 
 * <http://www.ecma-international.org/ecma-262/5.1/#sec-8.6.2>
@@ -55,7 +55,7 @@ accessible, but it can be interacted with using:
 * `duk_get_prototype()` and `duk_set_prototype()`: Duktape C API calls to
   read/write the internal prototype.
 
-The Ecmascript APIs (`__proto__` and `Obj.setPrototypeOf`) prevent creation
+The ECMAScript APIs (`__proto__` and `Obj.setPrototypeOf`) prevent creation
 of prototype loops; an attempt to create one fails with a TypeError:
 
 ```
@@ -73,7 +73,7 @@ terminate lookups from looped prototype chains.
 
 ## External prototype
 
-The external prototype is the `.prototype` property present in most Ecmascript
+The external prototype is the `.prototype` property present in most ECMAScript
 functions.  It's present in all functions by default, but can be removed
 manually (also some built-ins don't have the property).  The `.prototype`
 property only has an effect when a function is called as a constructor, i.e.:
@@ -109,9 +109,9 @@ the default instance.  In particular, if you ignore the default instance and
 explicitly return an object value from the constructor, the external prototype
 has no effect on the objects created.
 
-## Default external prototype object of Ecmascript functions
+## Default external prototype object of ECMAScript functions
 
-When you declare a function in Ecmascript code the Ecmascript semantics
+When you declare a function in ECMAScript code the ECMAScript semantics
 provide an automatic external `.prototype` object.  For example, when
 declaring:
 
@@ -166,7 +166,7 @@ objects:
 
 ## No default external prototype object for Duktape/C functions
 
-Duktape/C functions behave identically to Ecmascript functions when called
+Duktape/C functions behave identically to ECMAScript functions when called
 as constructors: a default instance is created based on the `.prototype`
 property of the Duktape/C function, etc.
 

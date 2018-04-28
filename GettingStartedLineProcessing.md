@@ -3,9 +3,9 @@
 ## Overview
 
 Let's look at a simple example program.  The program reads in a line from
-`stdin` using a C mainloop, calls an Ecmascript helper to transform the
+`stdin` using a C mainloop, calls an ECMAScript helper to transform the
 line, and prints out the result.  The line processing function can take
-advantage of Ecmascript goodies like regular expressions, and can be easily
+advantage of ECMAScript goodies like regular expressions, and can be easily
 modified without recompiling the C program.
 
 The script code will be placed in
@@ -47,12 +47,12 @@ static void push_file_as_string(duk_context *ctx, const char *filename) {
 ```
 
 Because Duktape is an embeddable engine and makes minimal assumptions
-there are no file I/O bindings in the default C or Ecmascript API.  The
+there are no file I/O bindings in the default C or ECMAScript API.  The
 above helper is an example of how to push the contents of a file as a
 string; the example uses a fixed read buffer for brevity, a better
 implementation would first check the file size and then allocate a buffer
 for it.  The Duktape distributable includes "extras" which provide, among
-other things, useful C and Ecmascript helpers, including file I/O helpers.
+other things, useful C and ECMAScript helpers, including file I/O helpers.
 
 ```c
 ctx = duk_create_heap_default();
@@ -63,7 +63,7 @@ if (!ctx) {
 ```
 
 First we create a Duktape context.  A context allows us to exchange values
-with Ecmascript code by pushing and popping values to the **value stack**.
+with ECMAScript code by pushing and popping values to the **value stack**.
 Most calls in the Duktape API operate with the value stack, pushing, popping,
 and examining values on the stack.  For production code you should use
 [duk_create_heap()](http://duktape.org/api.html#duk_create_heap) so that you
@@ -83,7 +83,7 @@ duk_pop(ctx);  /* ignore result */
 First we use our file helper to push <code>process.js</code> onto the value
 stack as a string.  Then we use [duk_peval()](http://duktape.org/api.html#duk_peval)
 to compile and run the script.  The script registers `processLine()` into the
-Ecmascript global object for later use.  A **protected call, duk_peval(),** is
+ECMAScript global object for later use.  A **protected call, duk_peval(),** is
 used for running the script so that any script errors, such as syntax errors,
 are caught and handled without causing a fatal error.  If an error occurs, the
 error message is coerced safely using
@@ -100,7 +100,7 @@ duk_push_global_object(ctx);
 duk_get_prop_string(ctx, -1 /*index*/, "processLine");
 ```
 
-The first call pushes the Ecmascript global object to the value stack.
+The first call pushes the ECMAScript global object to the value stack.
 The second call looks up `processLine` property of the global object (which
 the script in `process.js` has defined).  The `-1` argument is an index to
 the value stack; negative values refer to stack elements starting from the

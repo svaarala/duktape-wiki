@@ -11,7 +11,7 @@ There are three types of errors handled by Duktape:
   assertion failures inside Duktape.
 
 Normal errors are propagated internally using a `longjmp` or C++ exceptions
-(depending on configuration).  They are caught using an Ecmascript `try-catch`
+(depending on configuration).  They are caught using an ECMAScript `try-catch`
 or a [protected](http://duktape.org/api.html#taglist-protected) C API call.
 
 Fatal errors caused by e.g. uncaught errors trigger a call into a fatal error

@@ -1,6 +1,6 @@
 # How to get a reference to the global object
 
-There is no standard named binding for the global object in Ecmascript, so
+There is no standard named binding for the global object in ECMAScript, so
 scripts access it using various idioms.  Since Duktape 2.1 an explicit
 `global` binding is available, based on <https://github.com/tc39/proposal-global>.
 

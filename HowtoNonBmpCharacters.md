@@ -1,10 +1,10 @@
 # How to work with non-BMP characters
 
-## Ecmascript and Duktape support for non-BMP
+## ECMAScript and Duktape support for non-BMP
 
-### Ecmascript standard strings are 16-bit only
+### ECMAScript standard strings are 16-bit only
 
-Ecmascript standard itself does not support non-BMP characters: all
+ECMAScript standard itself does not support non-BMP characters: all
 codepoints are strictly 16-bit.  Non-BMP characters are intended to be
 represented using surrogate pairs:
 
@@ -24,7 +24,7 @@ characters (again interpreting the string as UTF-16):
 ### Duktape strings support up to 32-bit codepoints
 
 Duktape represents strings in an extended UTF-8 format which allows both
-arbitrary 16-bit codepoints (as required by Ecmascript) but also extended
+arbitrary 16-bit codepoints (as required by ECMAScript) but also extended
 codepoints for the full 32-bit range.  Also arbitrary byte sequences (which
 are invalid UTF-8) are allowed:
 
@@ -34,8 +34,8 @@ As a result, Duktape supports characters in the non-BMP range directly:
 
 - C code can push such strings, expressed as (extended) UTF-8, directly
   using e.g. `duk_push_string()`.
-- Non-BMP characters will mostly work as one expects in Ecmascript code.
-  There are some individual Ecmascript bindings which may not work as
+- Non-BMP characters will mostly work as one expects in ECMAScript code.
+  There are some individual ECMAScript bindings which may not work as
   expected because the standard bindings expect codepoints to be at most
   16 bits.
 
@@ -87,7 +87,7 @@ pairs as appropriate.  It's probably best to write helpers to:
 This approach is convenient for C code, because strings can be expressed
 directly as UTF-8 with no conversion or dealing with surrogate pairs.
 
-One limitation is that there is no Ecmascript syntax for non-BMP characters
+One limitation is that there is no ECMAScript syntax for non-BMP characters
 so you can't use them in literals.  There are a few workarounds:
 
 ```js

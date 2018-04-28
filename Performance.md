@@ -87,7 +87,7 @@ character/byte offset can be efficiently handled by scanning backwards or
 forwards from the cached location.  When a string access cannot be resolved
 using the cache, the string is scanned either from the beginning or the end,
 which is obviously very expensive for large strings.  The cache is maintained
-with a very simple LRU mechanism and is transparent to both Ecmascript and C
+with a very simple LRU mechanism and is transparent to both ECMAScript and C
 code.
 
 The string cache makes simple loops like the following efficient:
@@ -141,7 +141,7 @@ stable ordering (insertion order).  When an object has enough properties
 (internal define `DUK_HOBJECT_E_USE_HASH_LIMIT`, currently 32), a hash
 lookup table is also allocated to speed up property lookups.  Even in
 this case the key ordering is retained which is a practical requirement
-for an Ecmascript implementation.  The hash part is avoided for most objects
+for an ECMAScript implementation.  The hash part is avoided for most objects
 because it increases memory footprint and doesn't significantly speed up
 property lookups for very small objects.
 
@@ -186,7 +186,7 @@ slower.
 
 To keep identifier accesses in the fast path:
 
-* Execute (almost all) code inside Ecmascript functions, not in the top-level
+* Execute (almost all) code inside ECMAScript functions, not in the top-level
   global or eval code: global/eval code never uses fast path identifier
   accesses (however, function code inside global/eval does).
 
@@ -207,13 +207,13 @@ arrays or strings are enumerated.
 Note, however, that iterating a string or an array with `for-in` and
 expecting the array elements or string indices to be enumerated in an
 ascending order is non-portable.  Such behavior, while guaranteed by many
-implementations including Duktape, is not guaranteed by the Ecmascript
+implementations including Duktape, is not guaranteed by the ECMAScript
 E5.1 standard.
 
 ### Function features
 
-Ecmascript has several features which make function entry and execution
-quite expensive.  The general goal of the Duktape Ecmascript compiler is to
+ECMAScript has several features which make function entry and execution
+quite expensive.  The general goal of the Duktape ECMAScript compiler is to
 avoid the troublesome features for most functions while providing full
 compatibility for the rest.
 
@@ -324,7 +324,7 @@ for (i = 0; i < n; i++) {
 
 When creating buffers, note that `new Duktape.Buffer(x)` always creates a
 Buffer object, while `Duktape.Buffer(x)` returns a plain buffer value.  This
-mimics how Ecmascript `new String()` and `String()` work.  Plain buffers
+mimics how ECMAScript `new String()` and `String()` work.  Plain buffers
 should be preferred whenever possible.
 
 ## Avoid sparse arrays when possible
@@ -503,7 +503,7 @@ code readability.
 
 ## Using "undefined"
 
-The `undefined` value is interesting in Ecmascript because it's not actually
+The `undefined` value is interesting in ECMAScript because it's not actually
 a literal but a global variable.  As such, if you refer to it just as
 `undefined`, Duktape will currently read it using a slow path variable read.
 For example:
