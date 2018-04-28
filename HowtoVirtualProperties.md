@@ -7,17 +7,17 @@ programmatically:
 
 * Proxy object
 
-## Ecmascript E5 accessor properties (getters and setters)
+## ECMAScript E5 accessor properties (getters and setters)
 
 ### Overview of accessors
 
-Ecmascript Edition 5 provides **accessor properties** (also called
+ECMAScript Edition 5 provides **accessor properties** (also called
 "getters and setters") which allow property read/write operations to be
-captured by a user function.  Setter/getter functions can be both Ecmascript
+captured by a user function.  Setter/getter functions can be both ECMAScript
 and Duktape/C functions.
 
 Accessors are set up using `Object.defineProperty()` or
-`Object.defineProperties()` from Ecmascript code, or using
+`Object.defineProperties()` from ECMAScript code, or using
 [duk_def_prop()](http://duktape.org/api.html#duk_def_prop) from C code.
 
 ### Example
@@ -67,7 +67,7 @@ and of being widely implemented.  However, they have significant limitations:
   arrays.
 
 * A standard property getter/setter function doesn't get the property key as an
-  argument (this behavior is defined by the Ecmascript specification) which
+  argument (this behavior is defined by the ECMAScript specification) which
   prevents sharing of getter/setter functions for multiple properties.  However,
   Duktape provides getter/setter functions with the property name as an additional,
   non-standard argument; see more discussion below.
@@ -119,16 +119,16 @@ If you don't want to use the non-standard getter/setter key argument,
 you can also share a single pair of Duktape/C functions to virtualize
 multiple property keys as follows.
 
-First, a separate Ecmascript function is created for each getter/setter,
+First, a separate ECMAScript function is created for each getter/setter,
 with each such function using the same underlying Duktape/C functions.  Second,
-the Duktape/C function uses properties stored on the Ecmascript function
+the Duktape/C function uses properties stored on the ECMAScript function
 instance "through" which it was called to specialize its behavior.  Below, a
-`key` property is stored in the Ecmascript function instance.
+`key` property is stored in the ECMAScript function instance.
 
 For each property, the getter/setter functions would be created as follows:
 
 ```c
-/* Create Ecmascript function objects for 'key1' getter/setter. */
+/* Create ECMAScript function objects for 'key1' getter/setter. */
 duk_push_c_function(my_setter, 1 /*nargs*/);
 duk_push_string(ctx, "key1");
 duk_put_prop_string(ctx, -2, "key");
@@ -137,7 +137,7 @@ duk_push_string(ctx, "key1");
 duk_put_prop_string(ctx, -2, "key");
 /* ... add accessor property to target object */
 
-/* Create Ecmascript function objects for 'key2' getter/setter in
+/* Create ECMAScript function objects for 'key2' getter/setter in
  * the same way, and so on for remaining properties.
  */
 ```
@@ -155,7 +155,7 @@ static duk_ret_t my_getter(duk_context *ctx) {
      */
     duk_push_this(ctx);
 
-    /* Get the 'key' being accessed from the Ecmascript function which
+    /* Get the 'key' being accessed from the ECMAScript function which
      * "wraps" the my_getter native function.
      */
     duk_push_current_function(ctx);
@@ -173,15 +173,15 @@ static duk_ret_t my_getter(duk_context *ctx) {
 }
 ```
 
-Separate Ecmascript function objects and pre-defined accessor properties on
+Separate ECMAScript function objects and pre-defined accessor properties on
 the target object are still needed for each virtualized property.
 
-## Ecmascript E6 Proxy subset
+## ECMAScript E6 Proxy subset
 
 ### Overview of Proxy
 
 In addition to accessors, Duktape provides a subset implementation of the
-Ecmascript E6 `Proxy` concept, see:
+ECMAScript E6 `Proxy` concept, see:
 
 * [Proxy object (subset)](http://duktape.org/guide.html#es6-proxy):
   current limitations in Duktape's `Proxy` implementation.
@@ -193,7 +193,7 @@ Ecmascript E6 `Proxy` concept, see:
   Mozilla's description of the `Proxy` implemented in Firefox, contains a lot of examples.
 
 The Proxy object is much more powerful than getters/setters, but is not yet
-a widely used feature of Ecmascript engines.
+a widely used feature of ECMAScript engines.
 
 ### Examples of has, get, set, and deleteProperty traps
 

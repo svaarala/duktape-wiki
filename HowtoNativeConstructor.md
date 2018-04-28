@@ -1,10 +1,10 @@
 # How to write a native constructor function
 
-A native constructor function works essentially the same way an Ecmascript
+A native constructor function works essentially the same way an ECMAScript
 constructor does, except that Duktape/C functions don't have a `.prototype`
 property by default.
 
-There are two basic ways (in Ecmascript) to create a new instance through
+There are two basic ways (in ECMAScript) to create a new instance through
 a constructor call:
 
 * Using the **default instance** given to the constructor automatically
@@ -13,7 +13,7 @@ a constructor call:
 
 ## Using the default instance
 
-When an Ecmascript constructor function is called as `new MyObject()`:
+When an ECMAScript constructor function is called as `new MyObject()`:
 
 * A default instance object is created automatically before the call happens.
   This object will be empty, and its internal prototype is set to
@@ -24,7 +24,7 @@ When an Ecmascript constructor function is called as `new MyObject()`:
 This default instance will be the result of `new MyObject()` unless the
 constructor returns an object value.
 
-In Ecmascript this basic idiom looks like:
+In ECMAScript this basic idiom looks like:
 
 ```js
 function MyObject(name) {
@@ -36,7 +36,7 @@ function MyObject(name) {
     // Return undefined, which causes the default instance to be used.
 }
 
-// For an Ecmascript function an automatic MyObject.prototype value will be
+// For an ECMAScript function an automatic MyObject.prototype value will be
 // set.  That object will also have a .constructor property pointing back to
 // Myobject.  You can add instance methods to MyObject.prototype.
 
@@ -117,7 +117,7 @@ void myobject_init(duk_context *ctx) {
 void test(duk_context *ctx) {
 	myobject_init(ctx);
 
-	/* Test creation of a new object from Ecmascript code. */
+	/* Test creation of a new object from ECMAScript code. */
 	duk_eval_string(ctx, "new MyObject('test object')");
 	/* ... stack top has result ... */
 	duk_get_prop_string(ctx, -1, "printName");  /* call obj.printName(); */
@@ -177,7 +177,7 @@ void myobject_init(duk_context *ctx) {
 void test(duk_context *ctx) {
 	myobject_init(ctx);
 
-	/* Test creation of a new object from Ecmascript code. */
+	/* Test creation of a new object from ECMAScript code. */
 	duk_eval_string(ctx, "new MyObject('test object')");
 	/* ... stack top has result ... */
 	duk_get_prop_string(ctx, -1, "printName");  /* call obj.printName(); */
@@ -199,25 +199,25 @@ void test(duk_context *ctx) {
 }
 ```
 
-This C version is almost identical to the Ecmascript version in function.
+This C version is almost identical to the ECMAScript version in function.
 There are at least two clear differences however:
 
-* The Ecmascript version of `MyObject` allows both constructor and normal
+* The ECMAScript version of `MyObject` allows both constructor and normal
   function call invocations.  The C version rejects a non-constructor call
   which is less error prone.
 
-* The Ecmascript version of `MyObject.prototype` has a `.constructor` back
+* The ECMAScript version of `MyObject.prototype` has a `.constructor` back
   reference, so that `MyObject.prototype.constructor === MyObject`.  The
   C version lacks this, but the reference would be easy to add.  The
-  `.constructor` back reference has no function from the Ecmascript engine
+  `.constructor` back reference has no function from the ECMAScript engine
   point of view, but some calling code may expect to find it.
 
 ## Using a replacement value
 
 This is a less often used approach, but still fully supported by the
-Ecmascript standard.
+ECMAScript standard.
 
-In Ecmascript code:
+In ECMAScript code:
 
 ```js
 var MyObject_prototype = {};
@@ -295,7 +295,7 @@ void myobject_init(duk_context *ctx) {
 void test(duk_context *ctx) {
 	myobject_init(ctx);
 
-	/* Test creation of a new object from Ecmascript code. */
+	/* Test creation of a new object from ECMAScript code. */
 	duk_eval_string(ctx, "new MyObject('test object')");
 	/* ... stack top has result ... */
 	duk_get_prop_string(ctx, -1, "printName");  /* call obj.printName(); */

@@ -1,13 +1,13 @@
 # Getting started: primality testing
 
 The [Getting started: line processing](GettingStartedLineProcessing.md) example
-illustrated how C code can call into Ecmascript to do things that are easy
-in Ecmascript but difficult in C.
+illustrated how C code can call into ECMAScript to do things that are easy
+in ECMAScript but difficult in C.
 
-The example in this article illustrates the reverse, how Ecmascript code can
+The example in this article illustrates the reverse, how ECMAScript code can
 call C code: while scripting is useful for many things, it is not optimal for
 low level byte or character processing.  Being able to call optimized C
-helpers allows you to write most of your script logic in nice Ecmascript but
+helpers allows you to write most of your script logic in nice ECMAScript but
 call into C for the performance critical parts.  Another reason for using
 native functions is to provide access to native libraries.
 
@@ -54,7 +54,7 @@ return 1;
 Return from the function call, indicating that there is a (single) return
 value on top of the value stack.  Multiple return values are not yet supported.
 You could also `return 0` to indicate that no return value is given in which
-case Duktape defaults to Ecmascript `undefined`.
+case Duktape defaults to ECMAScript `undefined`.
 A negative return value causes an error to be automatically thrown: this is
 a shorthand for throwing errors conveniently.  Note that you don't need to
 pop any values off the stack yourself, Duktape will do that for you
@@ -65,14 +65,14 @@ details.
 ## Primality test
 
 We'll use a primality test as an example for using native code to speed
-up Ecmascript algorithms.  More specifically, our test program searches for
-primes under 1000000 which end with the digits '9999'.  The Ecmascript
+up ECMAScript algorithms.  More specifically, our test program searches for
+primes under 1000000 which end with the digits '9999'.  The ECMAScript
 version of the program is:
 
 * <https://github.com/svaarala/duktape/blob/master/examples/guide/prime.js>
 
 Note that the program uses the native helper if it's available but falls
-back to an Ecmascript version if it's not.  This allows the Ecmascript code
+back to an ECMAScript version if it's not.  This allows the ECMAScript code
 to be used in other containing programs.  Also, if the prime check program
 is ported to another platform where the native version does not compile
 without changes, the program remains functional (though slower) until the
@@ -80,9 +80,9 @@ helper is ported.  In this case the native helper detection happens when the
 script is loaded.  You can also detect it when the code is actually called
 which is more flexible.
 
-A native helper with functionality equivalent to `primeCheckEcmascript()`
+A native helper with functionality equivalent to `primeCheckECMAScript()`
 is quite straightforward to implement.  Adding a program main and a simple
-`print()` binding into the Ecmascript global object, we get `primecheck.c`:
+`print()` binding into the ECMAScript global object, we get `primecheck.c`:
 
 * <https://github.com/svaarala/duktape/blob/master/examples/guide/primecheck.c>
 
@@ -96,7 +96,7 @@ int lim = duk_require_int(ctx, 1);
 ```
 
 These two calls check the two argument values given to the native helper.
-If the values are not of the Ecmascript number type, an error is thrown.
+If the values are not of the ECMAScript number type, an error is thrown.
 If they are numbers, their value is converted to an integer and assigned to
 the `val` and `lim` locals.  The index 0 refers to the first function
 argument and index 1 to the second.
@@ -112,8 +112,8 @@ duk_push_false(ctx);
 return 1;
 ```
 
-Pushes an Ecmascript `false` to the value stack.  The C return value 1
-indicates that the `false` value is returned to the Ecmascript caller.
+Pushes an ECMAScript `false` to the value stack.  The C return value 1
+indicates that the `false` value is returned to the ECMAScript caller.
 
 ```c
 duk_push_global_object(ctx);
@@ -121,11 +121,11 @@ duk_push_c_function(ctx, native_prime_check, 2 /*nargs*/);
 duk_put_prop_string(ctx, -2, "primeCheckNative");
 ```
 
-The first call, like before, pushes the Ecmascript global object to the
-value stack.  The second call creates an Ecmascript `Function` object
+The first call, like before, pushes the ECMAScript global object to the
+value stack.  The second call creates an ECMAScript `Function` object
 and pushes it to the value stack.  The function object is bound to the
-Duktape/C function `native_prime_check()`: when the Ecmascript function
-created here is called from Ecmascript, the C function gets invoked.
+Duktape/C function `native_prime_check()`: when the ECMAScript function
+created here is called from ECMAScript, the C function gets invoked.
 The second call argument (`2`) indicates how many arguments the C
 function gets on the value stack.  If the caller gives fewer arguments,
 the missing arguments are padded with `undefined`; if the caller gives
@@ -173,12 +173,12 @@ sys	0m0.000s
 ```
 
 Because most execution time is spent in the prime check, the speed-up
-compared to plain Ecmascript is significant.  You can check this by editing
+compared to plain ECMAScript is significant.  You can check this by editing
 `prime.js` and disabling the use of the native helper:
 
 ```
 // Select available helper at load time
-var primeCheckHelper = primeCheckEcmascript;
+var primeCheckHelper = primeCheckECMAScript;
 ```
 
 Re-compile and re-run the test:

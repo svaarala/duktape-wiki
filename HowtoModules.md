@@ -13,7 +13,7 @@ scratch.
 For Duktape 2.x remember to initialize the `module-duktape` extra before using
 module loading, see: <https://github.com/svaarala/duktape/tree/master/extras/module-duktape/README.rst>.
 
-You can load modules from Ecmascript code with the global `require()` function:
+You can load modules from ECMAScript code with the global `require()` function:
 
 ```js
 var mod = require('foo/bar');
@@ -132,23 +132,23 @@ on the `id` argument, and:
   to the code which originally called `require()` so it should have a useful
   error message containing the module identifier.  Any changes made to
   `exports` before throwing the error are thrown away.
-* **Return a string containing the module Ecmascript source code** if the
-  module was found and it has Ecmascript source code (possibly in addition to
+* **Return a string containing the module ECMAScript source code** if the
+  module was found and it has ECMAScript source code (possibly in addition to
   native bindings).  Duktape will then take care of compiling and executing the
   module code so that module symbols get registered into the `module.exports`
   object.
-* **Return undefined** to indicate the module was found but has no Ecmascript
+* **Return undefined** to indicate the module was found but has no ECMAScript
   source code.  This is useful for native modules, which are handled by
   modSearch() directly.
 
 In addition to returning a string or undefined, the modSearch() function
 can directly add symbols to `exports` and/or replace `module.exports` with
 a new value; for example, a native function/constructor.  This allows loading
-of native and hybrid native/Ecmascript modules.  Native modules can be
+of native and hybrid native/ECMAScript modules.  Native modules can be
 initialized from statically linked native code or via platform specific DLL
 loading.
 
-The module search function can be either an Ecmascript function or a
+The module search function can be either an ECMAScript function or a
 Duktape/C function.
 
 Also see:
@@ -158,7 +158,7 @@ Also see:
 
 ## Duktape's module object
 
-The `module` argument which is given to both modSearch() and an Ecmascript
+The `module` argument which is given to both modSearch() and an ECMAScript
 module being loaded has the following properties:
 
 <table>
@@ -174,7 +174,7 @@ module being loaded has the following properties:
 <tr>
 <td>.exports</td>
 <td>The current exports table, initially same as <code>exports</code>.
-    Can be overwritten by modSearch() and/or an Ecmascript module.  Overwriting
+    Can be overwritten by modSearch() and/or an ECMAScript module.  Overwriting
     <code>module.exports</code> allows a C module or a native function/constructor
     to be returned directly from <code>require()</code>.
     Added in Duktape 1.3.</td>
@@ -241,7 +241,7 @@ Duktape.modSearch = function (id) {
 }
 ```
 
-The following module search function supports pure C, pure Ecmascript, and
+The following module search function supports pure C, pure ECMAScript, and
 mixed modules.  C modules are loaded and initialized with a hypothetical
 `loadAndInitDll()` function which loads a DLL:
 
@@ -274,15 +274,15 @@ Duktape.modSearch = function (id, require, exports, module) {
         found = true;
     }
 
-    /* Ecmascript check. */
+    /* ECMAScript check. */
     name = '/modules/' + id + '.js';
     src = readFile(name);
     if (typeof src === 'string') {
-        print('loaded Ecmascript:', name);
+        print('loaded ECMAScript:', name);
         found = true;
     }
 
-    /* Must find either a DLL or an Ecmascript file (or both) */
+    /* Must find either a DLL or an ECMAScript file (or both) */
     if (!found) {
         throw new Error('module not found: ' + id);
     }
@@ -470,7 +470,7 @@ The module can also be loaded using the Duktape CommonJS module loader:
 
 * modSearch() would assign the module object returned from the init function
   (on top of the Duktape value stack) to `module.exports`, and return
-  `undefined` to indicate there's no Ecmascript source code associated with
+  `undefined` to indicate there's no ECMAScript source code associated with
   the module.
 
 * The module object returned from `dukopen_my_module()` would then appear
@@ -482,4 +482,4 @@ The module can also be loaded using the Duktape CommonJS module loader:
   module references are not supported because the module's `exports`
   table is not registered by Duktape as a "module being loaded" before the
   module search function exits.  Circular module references are supported for
-  pure Ecmascript modules.
+  pure ECMAScript modules.

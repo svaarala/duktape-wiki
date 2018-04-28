@@ -40,7 +40,7 @@ run (very minimally) with 32kB RAM.
 
 * A few native bindings, e.g. serial read/write bindings, LED flashing.
 
-It's possible to reduce footprint much below 160kB by dropping Ecmascript
+It's possible to reduce footprint much below 160kB by dropping ECMAScript
 built-in bindings:
 
 * For example, a "stripped" build in Duktape master allows a command line

@@ -92,7 +92,7 @@ See also:
 
 * The `configure.py` tool subsumes `genconfig.py`: it generates both a
   `duk_config.h` and prepared sources matching the configuration.  This makes
-  it possible to modify built-in Ecmascript objects, modify Unicode tables,
+  it possible to modify built-in ECMAScript objects, modify Unicode tables,
   etc, from the end user distributable without having to use the main repo.
 
 * You can still use `genconfig.py` as a separate tool.  However, it's

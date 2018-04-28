@@ -11,7 +11,7 @@
 <th>Buffer type</th>
 <th>Standard</th>
 <th>C API type</th>
-<th>Ecmascript type</th>
+<th>ECMAScript type</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -20,7 +20,7 @@
 <td>DUK_TAG_BUFFER</td>
 <td>[object Uint8Array]</td>
 <td>Plain memory-efficient buffer value (not an object).  Mimics an Uint8Array
-    for most Ecmascript behavior, separate type in C API.  Object coerces to an
+    for most ECMAScript behavior, separate type in C API.  Object coerces to an
     actual Uint8Array instance.  Has virtual index properties.  (Behavior
     changed in Duktape 2.x.)</td>
 </tr>
@@ -71,7 +71,7 @@ underlying `ArrayBuffer`; endianness can be specified explicitly so
 
 For very low memory environments plain buffers can be used in places where an
 Uint8Array would normally be used.  Plain buffers mimic Uint8Array behavior
-quite closely for Ecmascript code so often only small Ecmascript code changes
+quite closely for ECMAScript code so often only small ECMAScript code changes
 are needed when moving between actual Uint8Arrays and plain buffers.  C code
 needs to be aware of the typing difference, however.
 
@@ -146,7 +146,7 @@ The most likely development direction for future releases is to:
 <tr>
 <th>Type</th>
 <th>C</th>
-<th>Ecmascript</th>
+<th>ECMAScript</th>
 <th>Notes</th>
 </tr>
 <tr>
@@ -200,7 +200,7 @@ ArrayBuffer lazily on first read of the `.buffer` property.
 <tr>
 <th>Type</th>
 <th>C</th>
-<th>Ecmascript</th>
+<th>ECMAScript</th>
 <th>Notes</th>
 </tr>
 <tr>
@@ -242,7 +242,7 @@ ArrayBuffer lazily on first read of the `.buffer` property.
 <tr>
 <th>Type</th>
 <th>C</th>
-<th>Ecmascript</th>
+<th>ECMAScript</th>
 <th>Notes</th>
 </tr>
 <tr>
@@ -312,7 +312,7 @@ ArrayBuffer lazily on first read of the `.buffer` property.
 <tr>
 <th>Type</th>
 <th>C</th>
-<th>Ecmascript</th>
+<th>ECMAScript</th>
 <th>Notes</th>
 </tr>
 <tr>
@@ -366,27 +366,27 @@ ArrayBuffer lazily on first read of the `.buffer` property.
 <tr>
 <td>duk_buffer_to_string()</td>
 <td>Buffer data is used 1:1 as internal string representation.  If you want to
-    create valid Ecmascript strings, data should be in CESU-8 encoding.  It's
+    create valid ECMAScript strings, data should be in CESU-8 encoding.  It's
     possible to create symbol values (intentionally or by accident).  Using
     duk_push_lstring() for the buffer data is equivalent.</td>
 </tr>
 
 <tr>
 <td>new TextDecoder().decode(buf)</td>
-<td>Decodes a buffer as a UTF-8 string and outputs a valid Ecmascript string.
+<td>Decodes a buffer as a UTF-8 string and outputs a valid ECMAScript string.
     Invalid byte sequences are replaced with U+FFFD, non-BMP characters are
     replaced with surrogate pairs.</td>
 </tr>
 
 <tr>
 <td>duk_to_string()</td>
-<td>Not very useful: invokes Ecmascript ToString() coercion which results in
+<td>Not very useful: invokes ECMAScript ToString() coercion which results in
     strings like <code>[object Uint8Array]</code>.</td>
 </tr>
 
 <tr>
 <td>String(buf)</td>
-<td>Not very useful: invokes Ecmascript ToString() coercion as
+<td>Not very useful: invokes ECMAScript ToString() coercion as
     for duk_to_string().</td>
 </tr>
 </table>
@@ -402,7 +402,7 @@ ArrayBuffer lazily on first read of the `.buffer` property.
 <tr>
 <td>duk_to_buffer()</td>
 <td>Bytes from the string internal representation are copied byte-for-byte
-    into the result buffer.  For valid Ecmascript strings the result is
+    into the result buffer.  For valid ECMAScript strings the result is
     CESU-8 encoded.</td>
 </tr>
 
@@ -431,7 +431,7 @@ ArrayBuffer lazily on first read of the `.buffer` property.
 <tr>
 <th>Conversion</th>
 <th>C</th>
-<th>Ecmascript</th>
+<th>ECMAScript</th>
 <th>Notes</th>
 </tr>
 
@@ -480,7 +480,7 @@ ArrayBuffer lazily on first read of the `.buffer` property.
 <td>duk_to_buffer()</td>
 <td>n/a</td>
 <td>String is converted byte-for-byte from the internal representation into a
-    buffer.  For valid Ecmascript strings the result is valid CESU-8 which is
+    buffer.  For valid ECMAScript strings the result is valid CESU-8 which is
     used as their internal representation.</td>
 </tr>
 
@@ -641,7 +641,7 @@ Other notes:
   built-in typed array bindings.  In many cases the internal implementation
   will first promote the plain buffer to a (temporary) Uint8Array object
   which is used for the operation; the temporary is then thrown away.
-  This affects performance when using plain buffers with some Ecmascript
+  This affects performance when using plain buffers with some ECMAScript
   bindings.
 
 * Duktape built-ins like `Duktape.dec()` create plain buffers to save
@@ -900,7 +900,7 @@ var view = new Uint16Array(plainBuffer.buffer,
 print(view.length, view.byteOffset, view.byteLength, view.BYTES_PER_ELEMENT);
 ```
 
-Note that the C call gets a **byte length** argument (50) while the Ecmascript
+Note that the C call gets a **byte length** argument (50) while the ECMAScript
 equivalent gets an **element length** argument (25).  This is intentional for
 consistency: in the C API buffer lengths are always represented as bytes.
 
@@ -1174,7 +1174,7 @@ var finalArrayBuffer = data.buffer.slice(0, offset);
 ```
 
 If you want to use a Duktape specific solution, a dynamic plain buffer can be
-resized on-the-fly with minimal cost.  A dynamic buffer appears to Ecmascript
+resized on-the-fly with minimal cost.  A dynamic buffer appears to ECMAScript
 code as an ArrayBuffer whose `.length` and `.byteLength` will simply change
 to reflect a resize of the buffer.  Dynamic plain buffers can only be resized
 from C code.  External plain buffers can also be reconfigured on-the-fly which
@@ -1183,7 +1183,7 @@ allows e.g. resizing.
 ## Avoiding Duktape custom behaviors
 
 It's best to start with ES2015 typed arrays because they are the "best
-standard" for buffers in Ecmascript.  When doing so, avoid Duktape specific
+standard" for buffers in ECMAScript.  When doing so, avoid Duktape specific
 behavior unless you really need to.  Particular gotchas are discussed below.
 
 ### Avoid relying on memory zeroing of Node.js Buffers
@@ -1199,7 +1199,7 @@ config option is turned off.
 ## Security considerations
 
 Duktape guarantees that no out-of-bounds accesses are possible to an
-underlying plain buffer by any Ecmascript code.
+underlying plain buffer by any ECMAScript code.
 
 This guarantee is in place even if you initialize a buffer object using a
 dynamic plain buffer which is then resized so that the conceptual buffer

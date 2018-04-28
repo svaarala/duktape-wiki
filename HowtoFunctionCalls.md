@@ -2,11 +2,11 @@
 
 [API calls for invoking functions](http://duktape.org/api.html#taglist-call)
 are mostly quite straightforward: they are given a target function and a list
-of arguments.  However, the following Ecmascript specific details complicate
+of arguments.  However, the following ECMAScript specific details complicate
 matters a bit:
 
-- Ecmascript function/method calls involve a "this" binding which varies
-  between API calls and Ecmascript call idioms.  If not given, the "this"
+- ECMAScript function/method calls involve a "this" binding which varies
+  between API calls and ECMAScript call idioms.  If not given, the "this"
   binding defaults to `undefined` (but coerces to the global object unless
   the target function is strict; Duktape/C functions are always strict).
 
@@ -25,7 +25,7 @@ The table below summarizes API calls, using unprotected calls as examples:
 
 <table>
 <tr>
-<th>Ecmascript idiom</th>
+<th>ECMAScript idiom</th>
 <th>Duktape C API idiom</th>
 <th>This binding</th>
 <th>Value stack</th>

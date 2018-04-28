@@ -34,14 +34,14 @@ The basic issues in implementing such a function are:
 
 ### Global object
 
-If one were to implement `setTimeout()` in pure Ecmascript, the reference
+If one were to implement `setTimeout()` in pure ECMAScript, the reference
 would be stored to the global object.  You can do the same in a Duktape/C
 function.
 
 ### Stash objects
 
 You can store references in Duktape's "stash" objects.  They are similar to
-the global object but are not (easily) reachable from Ecmascript code:
+the global object but are not (easily) reachable from ECMAScript code:
 
 - <http://duktape.org/api.html#duk_push_heap_stash>
 - <http://duktape.org/api.html#duk_push_global_stash>
@@ -62,7 +62,7 @@ etc.  For example:
 ## Example using a single global variable
 
 The most trivial approach is simply to store the callback as a global
-variable.  In Ecmascript one would simply:
+variable.  In ECMAScript one would simply:
 
 ```js
 var _callbackFunc;  // single callback function

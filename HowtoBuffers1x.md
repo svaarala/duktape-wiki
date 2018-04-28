@@ -114,7 +114,7 @@ with typed arrays:
 <tr>
 <th>Type</th>
 <th>C</th>
-<th>Ecmascript</th>
+<th>ECMAScript</th>
 </tr>
 <tr>
 <td>plain buffer</td>
@@ -154,7 +154,7 @@ with typed arrays:
 </tr>
 </table>
 
-## Using buffers in Ecmascript code
+## Using buffers in ECMAScript code
 
 ### Plain buffer and Duktape.Buffer
 
@@ -258,7 +258,7 @@ To summarize, the main differences between a plain buffer and a
 
 ### Typed arrays
 
-Typed arrays are used in Ecmascript code like with other engines, see
+Typed arrays are used in ECMAScript code like with other engines, see
 e.g. the following tutorial:
 
 * <http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/>
@@ -510,7 +510,7 @@ var view = new Uint16Array(new ArrayBuffer(plainBuffer),
 print(view.length, view.byteOffset, view.byteLength, view.BYTES_PER_ELEMENT);
 ```
 
-Note that the C call gets a **byte length** argument (50) while the Ecmascript
+Note that the C call gets a **byte length** argument (50) while the ECMAScript
 equivalent gets an **element length** argument (25).  This is intentional for
 consistency: in the C API buffer lengths are always represented as bytes.
 
@@ -922,7 +922,7 @@ Starting from Duktape 1.4.0 a plain buffer argument is treated the same as
 ## Avoiding Duktape custom behaviors
 
 As a general rule it is best to start with Khronos/ES2015 typed arrays because
-they are the "best standard" for buffers in Ecmascript.  When doing so, avoid
+they are the "best standard" for buffers in ECMAScript.  When doing so, avoid
 Duktape specific behavior unless you really need to.  Particular gotchas are
 discussed below.
 
@@ -994,7 +994,7 @@ config option is turned off.
 ## Security considerations
 
 Duktape guarantees that no out-of-bounds accesses are possible to an
-underlying plain buffer by any Ecmascript code.
+underlying plain buffer by any ECMAScript code.
 
 This guarantee is in place even if you initialize a buffer object using a
 dynamic plain buffer which is then resized so that the conceptual buffer
