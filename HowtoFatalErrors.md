@@ -17,6 +17,9 @@ or a [protected](http://duktape.org/api.html#taglist-protected) C API call.
 Fatal errors caused by e.g. uncaught errors trigger a call into a fatal error
 handler which is registered in `duk_create_heap()`.  If the handler argument
 was given as `NULL` a built-in default fatal error handler is used instead.
+The default fatal error handler either calls `abort()` or throws a C++
+exception (`duk_fatal_exception`) depending on the `DUK_USE_CPP_EXCEPTIONS`
+config option.
 **It is strongly recommended to provide a custom fatal error handler**.
 
 Fatal errors without context, currently limited to assertion failures, always
@@ -55,11 +58,26 @@ argument.
 ## Built-in default fatal error handler
 
 The built-in default fatal error handler is optimized for minimal assumptions
-about the underlying platform.  The default handler writes a debug log entry
-(but **does not write anything to stdout or stderr**!) and then calls `abort()`
-through the `DUK_ABORT()` config define (which can be replaced).  If the abort()
-call returns, the handler enters an infinite loop to make sure execution doesn't
-proceed after a fatal error (this should obviously never happen).
+about the underlying platform.  The default behavior depends on the
+`DUK_USE_CPP_EXCEPTIONS` config option:
+
+- If `DUK_USE_CPP_EXCEPTIONS` is disabled (default): the default handler writes
+  a debug log entry (but **does not write anything to stdout or stderr**!) and
+  then calls `abort()` through the `DUK_ABORT()` config define (which can be
+  replaced).  If the abort() call returns, the handler enters an infinite loop
+  to make sure execution doesn't proceed after a fatal error (this should
+  obviously never happen).
+
+- If `DUK_USE_CPP_EXCEPTIONS` is enabled: the default handler writes a debug log
+  entry (but does not write anything to stdout or stderr) and then throws a
+  `duk_fatal_exception`.  The exception inherits from `std::runtime_error` and
+  provides a `::what()` method to access the fatal error message.  Even though
+  the exception is catchable, it is still unsafe to continue execution after
+  catching it.
+
+- Before Duktape 2.3 the behavior for `DUK_USE_CPP_EXCEPTIONS` was a bit
+  different: uncaught errors would propagate out as `duk_internal_exception`,
+  while other fatal errors (such as assertion failure) would use `abort()`.
 
 Because the default behavior is not very useful in most environments, you should:
 
