@@ -14,6 +14,10 @@
 <td>Static blog compiler, using Duktape for scripting</td>
 </tr>
 <tr>
+<td><a href="https://www.clearblade.com/" target="_blank">ClearBlade</a></td>
+<td>IoT Cloud and Edge Platform uses Duktape for its microservice runtime wrapped with cgo</td>
+</tr>
+<tr>
 <td><a href="http://contraptionmaker.com/" target="_blank">Contraption Maker</a></td>
 <td>Using Duktape for <a href="http://steamcommunity.com/workshop/browse/?appid=241240&amp;requiredtags[]=Mod" target="_blank">mods</a></td>
 </tr>
