@@ -14,6 +14,10 @@
 <td>Static blog compiler, using Duktape for scripting</td>
 </tr>
 <tr>
+<td><a href="https://github.com/CargoWebServer/CargoWebServer" target="_blank">CargoWebServer</a></td>
+<td>A Javascript web application framework written in Go</td>
+</tr>
+<tr>
 <td><a href="https://www.clearblade.com/" target="_blank">ClearBlade</a></td>
 <td>IoT Cloud and Edge Platform uses Duktape for its microservice runtime wrapped with cgo</td>
 </tr>
