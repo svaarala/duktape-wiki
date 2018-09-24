@@ -55,6 +55,10 @@
 <td>Java NDK wrapper for Duktape on Android</td>
 </tr>
 <tr>
+<td><a href="https://github.com/webfolderio/duktape4j" target="_blank">duktape4j</a></td>
+<td>A Java binding for Duktape</td>
+</tr>
+<tr>
 <td><a href="https://github.com/ndob/duktape-node" target="_blank">duktape-node</a></td>
 <td>Running scripts in a separate isolated context from Node.js</td>
 </tr>
