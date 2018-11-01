@@ -50,6 +50,7 @@ Welcome to the official Duktape Wiki!
 ## Frequently asked questions
 
 * [Development setup for developing Duktape](DevelopmentSetup.md)
+* [Troubleshooting basics](TroubleshootingBasics.md)
 * [Internal and external prototype](InternalExternalPrototype.md)
 * [API C types](ApiCTypes.md)
 * [Post-ES5 features](PostEs5Features.md)
