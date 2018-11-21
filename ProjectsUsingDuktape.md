@@ -127,6 +127,10 @@
 <td>A "fantasy console" - an imaginary late 80s-esque virtual home computer - using Duktape for its code interpreter</td>
 </tr>
 <tr>
+<td><a href="http://www.qgoda.net/" target="_blank">Qgoda</a></td>
+<td>Using Duktape for running auxiliary code written in JavaScript</td>
+</tr>
+<tr>
 <td><a href="http://www.radare.org/" target="_blank">radare</a></td>
 <td>Using Duktape for reverse engineering scripts</td>
 </tr>
