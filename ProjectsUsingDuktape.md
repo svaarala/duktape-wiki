@@ -99,6 +99,10 @@
 <td>IRC bot written in C++14 and Javascript, using Duktape for scripting</td>
 </tr>
 <tr>
+<td><a href="https://janus.conf.meetecho.com/docs/duktape.html">Janus WebRTC Server</a></td>
+<td>Using Duktape for a scripting interface to the Janus WebRTC Server</td>
+</tr>
+<tr>
 <td><a href="https://metacpan.org/pod/JavaScript::Duktape">JavaScript::Duktape</a></td>
 <td>Perl binding for Duktape</td>
 </tr>
