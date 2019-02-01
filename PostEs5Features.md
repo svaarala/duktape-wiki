@@ -312,6 +312,15 @@ Duktape status is also updated for new releases in
 <td>@@isConcatSpreadable well-known symbol support in <code>Array.prototype.concat</code>.</td>
 </tr>
 
+<tr>
+<td>
+<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-well-known-symbols">@@unscopables</a></td>
+<td>ES2015</td>
+<td>Full</td>
+<td>XXX</td>
+<td>@@unscopables well-known symbol support in <code>with</code> binding.</td>
+</tr>
+
 </table>
 
 ## Proxy handlers (traps)
