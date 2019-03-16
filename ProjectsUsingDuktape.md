@@ -115,6 +115,10 @@
 <td>Using Duktape to parse proxy PAC files</td>
 </tr>
 <tr>
+<td><a href="https://www.lowjs.org" target="_blank">low.js</a></td>
+<td>low.js is a port of the JavaScript runtime Node.js with far lower system requirements, allowing it to run on cheap, power-efficient microcontroller boards based on the ESP32-WROVER module.</td>
+</tr>
+<tr>
 <td><a href="https://github.com/megous/megatools" target="_blank">Megatools</a></td>
 <td>Using Duktape for main program logic</td>
 </tr>
