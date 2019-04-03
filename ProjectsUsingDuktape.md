@@ -179,6 +179,10 @@
 <td>The Unicon programming language</td>
 </tr>
 <tr>
+<td><a href="https://www.zabbix.com/documentation/4.2/manual/appendix/items/preprocessing_javascript" target="_blank">Zabbix</a></td>
+<td>IT infrastructure monitoring, uses Duktape for scripting</td>
+</tr>
+<tr>
 <td><a href="https://github.com/zero-rp/ZUI" target="_blank">ZUI</a></td>
 <td>A cross platform UI development library, uses Duktape for scripting</td>
 </tr>
