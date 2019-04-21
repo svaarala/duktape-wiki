@@ -94,7 +94,7 @@ detail below the table.
 <td>FreeBSD</td>
 <td>Clang</td>
 <td>x86</td>
-<td>Aliasing issues with clang 3.3 on 64-bit FreeBSD, <code>-m32</code>, and packed <code>duk_tval</code> (see below).</td>
+<td>Aliasing issues with clang 3.x and 4.x (seems to be fixed in 5.x) on 32-bit FreeBSD (-m32), and packed <code>duk_tval</code> (see below).</td>
 </tr>
 <tr>
 <td>FreeBSD</td>
@@ -222,12 +222,13 @@ detail below the table.
 
 ### Clang
 
-Clang 3.3 on FreeBSD has some aliasing issues (at least) when using
+Clang 3.x and 4.x on FreeBSD has some aliasing issues (at least) when using
 `-m32` and when Duktape ends up using a packed `duk_tval` value representation
-type.  You can work around the problem by defining `DUK_OPT_NO_PACKED_TVAL` to
-disable packed value type.  The problem does not appear in all clang versions.
-Duktape self tests cover this issue (define `DUK_OPT_SELF_TESTS` when compiling.
-See internal test file [clang_aliasing.c](https://github.com/svaarala/duktape/blob/master/misc/clang_aliasing.c).
+type.  You can work around the problem by using `-UDUK_USE_PACKED_TVAL` to
+disable the packed value type.  The problem does not appear in all clang versions;
+for FreeBSD it seems to be fixed in Clang 5.x.  Duktape self tests cover this
+issue (use `DUK_USE_SELF_TESTS`).  See internal test file
+[clang_aliasing.c](https://github.com/svaarala/duktape/blob/master/misc/clang_aliasing.c).
 
 ### MSVC
 
@@ -312,22 +313,21 @@ git repository to see how Dukweb is compiled.
   `DUK_VSNPRINTF()` manually in your `duk_config.h` header.
 
 * If Duktape compiles but doesn't seem to work correctly, enable
-  self tests with `DUK_OPT_SELF_TESTS`.  Self tests detect some compiler
+  self tests with `DUK_USE_SELF_TESTS`.  Self tests detect some compiler
   and platform issues which cannot be caught compile time.
 
 * If the target platform has specific alignment requirements and Duktape
-  doesn't autodetect the platform correctly, you may need to provide
-  either `DUK_OPT_FORCE_ALIGN=4` or `DUK_OPT_FORCE_ALIGN=8`.  The alignment
-  number should match whatever alignment is needed for IEEE doubles and
-  64-bit integer values.
+  doesn't autodetect the platform correctly, you may need to force alignment
+  explicitly using `DUK_USE_ALIGN_BY`.  The alignment number should match
+  whatever alignment is needed for IEEE doubles and 64-bit integer values.
 
 * If compilation fails in endianness detection, Duktape probably doesn't
   (yet) support the platform specific endianness headers of your platform.
   Such headers are unfortunately non-standardized, so endianness detection
   is a common (and usually trivial) portability issue on custom platforms.
-  Use `DUK_OPT_FORCE_BYTEORDER` to force endianness as a workaround.
-  If you know how the endianness detection should work on your platform,
-  please send an e-mail about the issue or contribute a patch.
+  Use `DUK_USE_BYTEORDER` to force endianness as a workaround.  If you know
+  how the endianness detection should work on your platform, please send an
+  e-mail about the issue or contribute a patch.
 
 * Another typical portability issue on new/exotic platforms is the Date
   built-in, which requires a few platform specific functions for dealing
