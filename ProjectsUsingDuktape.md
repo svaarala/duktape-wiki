@@ -67,6 +67,10 @@
 <td>OpenGL bindings for Duktape</td>
 </tr>
 <tr>
+<td><a href="https://github.com/jessedoyle/duktape.cr" target="_blank">duktape.cr</a></td>
+<td><a href="https://crystal-lang.org/" target="_blank">Crystal</a> bindings for Duktape</td>
+</tr>
+<tr>
 <td><a href="https://github.com/judofyr/duktape.rb" target="_blank">duktape.rb</a></td>
 <td>Ruby binding for Duktape</td>
 </tr>
