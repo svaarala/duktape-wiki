@@ -116,7 +116,7 @@
 </tr>
 <tr>
 <td><a href="https://www.lowjs.org" target="_blank">low.js</a></td>
-<td>low.js is a port of the JavaScript runtime Node.js with far lower system requirements, allowing it to run on cheap, power-efficient microcontroller boards based on the ESP32-WROVER module.</td>
+<td>low.js is a port of the JavaScript runtime Node.js with far lower system requirements, allowing it to run on cheap, power-efficient microcontroller boards based on the ESP32-WROVER module</td>
 </tr>
 <tr>
 <td><a href="https://github.com/megous/megatools" target="_blank">Megatools</a></td>
@@ -176,7 +176,7 @@
 </tr>
 <tr>
 <td><a href="https://github.com/termux/termux-app" target="_blank">Termux</a></td>
-<td>Includes a Duktape package.</td>
+<td>Includes a Duktape package</td>
 </tr>
 <tr>
 <td><a href="https://github.com/dbohdan/tcl-duktape" target="_blank">tcl-duktape</a></td>
@@ -185,6 +185,10 @@
 <tr>
 <td><a href="http://btiffin.users.sourceforge.net/up/programs.html#duktape" target="_blank">Unicon</a></td>
 <td>The Unicon programming language</td>
+</tr>
+<tr>
+<td><a href="https://github.com/bobpepin/vim">vim</a></td>
+<td>Fork of vim with Duktape ECMAScript support</td>
 </tr>
 <tr>
 <td><a href="https://www.zabbix.com/documentation/4.2/manual/appendix/items/preprocessing_javascript" target="_blank">Zabbix</a></td>

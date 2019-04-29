@@ -12,7 +12,7 @@ Contributing changes
 
 Changes to the Wiki are made through pull requests:
 
-* If you have not configured to Duktape so far, ensure you are in the
+* If you have not contributed to Duktape so far, ensure you are in the
   Duktape [AUTHORS.rst](https://github.com/svaarala/duktape/blob/master/AUTHORS.rst)
   file.  If not, **your contribution will not (and must not) be merged**;
   issue a pull request into the Duktape repository to add yourself to the
