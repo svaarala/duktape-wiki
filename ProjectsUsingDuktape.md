@@ -175,6 +175,10 @@
 <td>Swift bindings for Duktape</td>
 </tr>
 <tr>
+<td><a href="https://github.com/termux/termux-app" target="_blank">Termux</a></td>
+<td>Includes a Duktape package.</td>
+</tr>
+<tr>
 <td><a href="https://github.com/dbohdan/tcl-duktape" target="_blank">tcl-duktape</a></td>
 <td>Tcl bindings for Duktape</td>
 </tr>
