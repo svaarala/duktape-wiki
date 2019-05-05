@@ -26,6 +26,10 @@
 <td>Using Duktape for <a href="http://steamcommunity.com/workshop/browse/?appid=241240&amp;requiredtags[]=Mod" target="_blank">mods</a></td>
 </tr>
 <tr>
+<td><a href="https://www.coyotebrowser.com/" target="_blank">Coyote browser engine</a></td>
+<td>Using Duktape as scripting engine for implementing HTML5 & <a href="https://hbbtv.org/" target="_blank">HBBTV</a> APIs. Intended for IoT/embedded devices. Not a desktop browser!</td>
+</tr>
+<tr>
 <td><a href="https://github.com/lzubiaur/duk-glfw" target="_blank">duk-glfw</a></td>
 <td><a href="http://www.glfw.org/">GLFW</a> bindings for Duktape</td>
 </tr>
