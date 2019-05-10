@@ -8,24 +8,24 @@ This is the repo for the official Duktape Wiki, <http://wiki.duktape.org/>.
 Duktape Wiki is edited in the [duktape-wiki](https://github.com/svaarala/duktape-wiki)
 repo, using pull requests to make edits.  The Wiki is built into static HTML files
 using [pandoc](http://pandoc.org/) and hosted on
-[wiki.duktape.org](http://wiki.duktape.org)).  Some pages are generated
+[wiki.duktape.org](http://wiki.duktape.org).  Some pages are generated
 from outside sources, e.g. `ConfigOptions` page is generated using
 [genconfig.py](https://github.com/svaarala/duktape/blob/master/tools/genconfig.py)
 (developed in the Duktape main repo).
 
-There's a minimal build script `build_pandoc.sh` in this directory; it's not
-used directly by the server but documents what's going on in the server side.
+Building
+--------
 
-Installation issues
--------------------
+The site is built with Linux, using Docker:
+```
+# Host needs a few commands like: make, git, zip.  Output site will appear
+# in build/output/duktape-wiki-dist-html.zip.  You may need to use 'sudo make'
+# depending on Docker setup.
 
-Random notes on installation:
+$ make clean docker-images docker-build
+```
 
-* Python2 is required.
-
-* Run `sudo apt install pandoc`.
-
-* Web server should redirect `/index.html` to `Home.html`.
+Web server should redirect `/index.html` to `Home.html`.
 
 License
 -------
