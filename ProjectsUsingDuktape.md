@@ -171,6 +171,10 @@
 <td>A <i>skookum</i> JavaScript runtime</td>
 </tr>
 <tr>
+<td><a href="https://github.com/brentp/slivar" target="_blank">slivar</a></td>
+<td>Genomics tool for rare disease research, using Duktape for filter expressions</td>
+</tr>
+<tr>
 <td><a href="https://github.com/solettaproject/soletta/" target="_blank">Soletta</a></td>
 <td>IoT framework</td>
 </tr>
