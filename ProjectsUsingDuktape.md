@@ -95,6 +95,10 @@
 <td>Using Duktape for reverse engineering binaries</td>
 </tr>
 <tr>
+<td><a href="https://github.com/gerbera/gerbera" target="_blank">Gerbera</a></td>
+<td>UPnP Media Server. Uses Duktape for scripting dynamic content layouts.</td>
+</tr>
+<tr>
 <td><a href="https://open-cobol.sourceforge.io/faq/index.html#duktape" target="_blank">GnuCOBOL</a></td>
 <td>A free COBOL compiler</td>
 </tr>
