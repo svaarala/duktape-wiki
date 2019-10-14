@@ -21,8 +21,8 @@ Example of `DUK_USE_DEBUG_WRITE` in manually edited `duk_config.h`:
 
 ```c
 #define DUK_USE_DEBUG_WRITE(level,file,line,func,msg) do { \
-		fprintf(stderr, "D%ld %s:%d (%s): %s\n", \
-		        (long) (level), (file), (long) (line), (func), (msg));
+		fprintf(stderr, "D%ld %s:%ld (%s): %s\n", \
+		        (long) (level), (file), (long) (line), (func), (msg)); \
 	} while (0)
 ```
 
