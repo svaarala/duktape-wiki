@@ -187,6 +187,10 @@
 <td>IoT framework</td>
 </tr>
 <tr>
+<td><a href="https://sporks.gg/" target="_blank">Sporks</a></td>
+<td>Discord Bot service using Duktape for user scripting</td>
+</tr>
+<tr>
 <td><a href="https://github.com/abiliojr/sqlite-js" target="_blank">SQLite's Cafe</a></td>
 <td>JavaScript for SQLite</td>
 </tr>
