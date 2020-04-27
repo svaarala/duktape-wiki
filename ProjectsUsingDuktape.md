@@ -151,6 +151,10 @@
 <td>Web browser, using Duktape for browser Javascript</td>
 </tr>
 <tr>
+<td><a href="https://github.com/OpenRCT2/OpenRCT2" target="_blank">OpenRCT2</a></td>
+<td>An open source re-implementation of Roller Coaster Tycoon 2, using Duktape for scripting</td>
+</tr>
+<tr>
 <td><a href="https://grapefruitopia.itch.io/prism-384" target="_blank">Prism-384</a></td>
 <td>A "fantasy console" - an imaginary late 80s-esque virtual home computer - using Duktape for its code interpreter</td>
 </tr>
