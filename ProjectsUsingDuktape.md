@@ -143,6 +143,10 @@
 <td>Media center, using Duktape for plugins</td>
 </tr>
 <tr>
+<td><a href="https://github.com/mysql/mysql-workbench/tree/8.0/tools/mga" target="_blank">MySQL GUI Automator</a></td>
+<td>Cross platform command line application that can be used to automate GUI applications, particularly for testing scenarios</td>
+</tr>
+<tr>
 <td><a href="https://github.com/syoyo/nanocanvas" target="_blank">NanoCanvas</a></td>
 <td>A portable JavaScript vector graphics engine, using Duktape for scripting</td>
 </tr>
