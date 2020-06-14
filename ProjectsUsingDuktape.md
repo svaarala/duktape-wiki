@@ -6,7 +6,7 @@
 <td>Using Duktape for embedded applications, debugger integration, <a href="https://git.allseenalliance.org/cgit/core/alljoyn-js.git/" target="_blank">git repo</a></td>
 </tr>
 <tr>
-<td><a href="http://atomicgameengine.com/" target="_blank">Atomic Game Engine</a></td>
+<td><a href="https://github.com/AtomicGameEngine/AtomicGameEngine" target="_blank">Atomic Game Engine</a></td>
 <td>Using Duktape for scripting</td>
 </tr>
 <tr>
