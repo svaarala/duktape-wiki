@@ -127,6 +127,10 @@
 <td>Perl binding for Duktape</td>
 </tr>
 <tr>
+<td><a href="https://metacpan.org/pod/JavaScript::Duktape::XS">JavaScript::Duktape::XS</a></td>
+<td>Another Perl binding for Duktape</td>
+</tr>
+<tr>
 <td><a href="https://github.com/ldx/libpac" target="_blank">libpac</a></td>
 <td>Using Duktape to parse proxy PAC files</td>
 </tr>
