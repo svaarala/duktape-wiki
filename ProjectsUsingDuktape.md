@@ -127,6 +127,14 @@
 <td>Perl binding for Duktape</td>
 </tr>
 <tr>
+<td><a href="https://github.com/mindbit/libjsmisc" target="_blank">libjsmisc</a></td>
+<td>Small utility library for embeddable JavaScript, built on top of the Duktape engine</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mindbit/libjssql" target="_blank">libjssql</a></td>
+<td>Database connectivity library that implements a JDBC-like API for JavaScript, based on the Duktape engine - currently supporting MySQL/MariaDB and PostgreSQL</td>
+</tr>
+<tr>
 <td><a href="https://github.com/ldx/libpac" target="_blank">libpac</a></td>
 <td>Using Duktape to parse proxy PAC files</td>
 </tr>
