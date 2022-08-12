@@ -47,6 +47,8 @@ Welcome to the official Duktape Wiki!
 * [How to enable debug prints](HowtoDebugPrints.md)
 * [How to configure your editor for Duktape](HowtoEditorConfiguration.md)
 
+* FIXME: http://wiki.duktape.org/HowtoMultipleNativeThreads.html
+
 ## Frequently asked questions
 
 * [Development setup for developing Duktape](DevelopmentSetup.md)
